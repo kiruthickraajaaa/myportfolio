@@ -3,1219 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kiruthick Raajaa J S — Programmer Analyst | SQL, BI & Application Development</title>
-  <meta name="description" content="Portfolio of Kiruthick Raajaa J S, Programmer Analyst at Sterlo specializing in MS SQL, T-SQL query optimization, interactive dashboards, data visualization, Python, and React.js." />
-  <meta name="keywords" content="Kiruthick Raajaa J S, Programmer Analyst, MS SQL Developer, Data Analyst, T-SQL, Dashboard Development, Sterlo, React, Python, Coimbatore" />
+  <title>Kiruthick Raajaa J S — Programmer Analyst | SQL & Data Engineering</title>
+  <meta name="description" content="Portfolio of Kiruthick Raajaa J S, Programmer Analyst specializing in MS SQL, Query Optimization, Interactive Dashboards, Python, and React.js." />
+  <meta name="keywords" content="Kiruthick Raajaa J S, Programmer Analyst, MS SQL Developer, Data Analyst, Dashboard Development, Python, React.js, Coimbatore" />
   <meta name="author" content="Kiruthick Raajaa J S" />
 
-  <!-- Open Graph / Social Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kiruthick Raajaa J S — Programmer Analyst | SQL & Data Solutions" />
-  <meta property="og:description" content="Designing high-performance SQL architectures, enterprise compliance dashboards, and automated low-code/web workflows." />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/gemini-svg.svg" />
 
-  <!-- Google Fonts -->
+  <!-- Editorial & Technical Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Official LinkedIn Profile Badge Script -->
+  <!-- External Stylesheet (Root Level) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Official LinkedIn Badge Script -->
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-  <style>
-    /* ==========================================================================
-       1. DESIGN SYSTEM & CSS VARIABLES
-       ========================================================================== */
-    :root[data-theme="dark"] {
-      --bg-primary: #060a14;
-      --bg-secondary: #0b1120;
-      --bg-elevated: #111827;
-      --bg-card: rgba(17, 24, 39, 0.78);
-      --bg-card-hover: rgba(24, 34, 56, 0.92);
-      --bg-glass: rgba(11, 17, 32, 0.82);
-      --border-subtle: rgba(148, 163, 184, 0.14);
-      --border-highlight: rgba(56, 189, 248, 0.45);
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --accent-cyan: #38bdf8;
-      --accent-indigo: #818cf8;
-      --accent-emerald: #10b981;
-      --accent-amber: #f59e0b;
-      --linkedin-blue: #0a66c2;
-      --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-      --shadow-glow: 0 0 35px rgba(56, 189, 248, 0.16);
-      --code-bg: #080d1a;
-    }
-
-    :root[data-theme="light"] {
-      --bg-primary: #f8fafc;
-      --bg-secondary: #f1f5f9;
-      --bg-elevated: #ffffff;
-      --bg-card: rgba(255, 255, 255, 0.9);
-      --bg-card-hover: #ffffff;
-      --bg-glass: rgba(248, 250, 252, 0.88);
-      --border-subtle: rgba(15, 23, 42, 0.1);
-      --border-highlight: rgba(2, 132, 199, 0.45);
-      --text-primary: #0f172a;
-      --text-secondary: #334155;
-      --text-muted: #64748b;
-      --accent-cyan: #0284c7;
-      --accent-indigo: #4f46e5;
-      --accent-emerald: #059669;
-      --accent-amber: #d97706;
-      --linkedin-blue: #0a66c2;
-      --shadow-card: 0 15px 35px -10px rgba(15, 23, 42, 0.08);
-      --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
-      --code-bg: #0f172a;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.65;
-      overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Ambient Background Mesh */
-    .ambient-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-    .ambient-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 25%, #000 35%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 25%, #000 35%, transparent 100%);
-      opacity: 0.45;
-    }
-    .ambient-orb-1 {
-      position: absolute;
-      top: -10%;
-      left: 10%;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
-      filter: blur(50px);
-    }
-    .ambient-orb-2 {
-      position: absolute;
-      top: 35%;
-      right: -5%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
-      filter: blur(60px);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    section {
-      padding: 96px 0;
-      position: relative;
-    }
-
-    /* Typography Helpers */
-    h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .section-header {
-      margin-bottom: 3.25rem;
-    }
-    .section-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent-cyan);
-      margin-bottom: 0.65rem;
-    }
-    .section-eyebrow::before {
-      content: '//';
-      color: var(--accent-indigo);
-    }
-    .section-title {
-      font-size: clamp(1.9rem, 3.5vw, 2.65rem);
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 1.02rem;
-      max-width: 640px;
-      margin-top: 0.6rem;
-    }
-
-    /* ==========================================================================
-       2. NAVIGATION
-       ========================================================================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      background: var(--bg-glass);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-subtle);
-      z-index: 1000;
-      transition: all 0.25s ease;
-    }
-    .nav-container {
-      max-width: 1200px;
-      height: 100%;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .brand-badge {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
-      color: #060a14;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: -0.03em;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 0.5rem 0.85rem;
-      border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.08);
-    }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-    .theme-toggle, .mobile-menu-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    }
-    .theme-toggle:hover, .mobile-menu-btn:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-    .mobile-menu-btn {
-      display: none;
-    }
-
-    /* ==========================================================================
-       3. HERO SECTION
-       ========================================================================== */
-    #hero {
-      padding: 140px 0 85px;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.4rem 0.95rem;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: var(--accent-emerald);
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1.4rem;
-    }
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-emerald);
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.15); }
-    }
-    .hero-title {
-      font-size: clamp(2.5rem, 5vw, 4.1rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-indigo) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .hero-description {
-      color: var(--text-muted);
-      font-size: 1.03rem;
-      max-width: 590px;
-      margin-bottom: 2rem;
-    }
-    .hero-description strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    /* Buttons */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-bottom: 2.5rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.78rem 1.4rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      border: 1px solid transparent;
-      font-family: inherit;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
-      color: #ffffff;
-      box-shadow: 0 8px 20px -6px rgba(56, 189, 248, 0.45);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -6px rgba(56, 189, 248, 0.6);
-    }
-    .btn-secondary {
-      background: var(--bg-card);
-      color: var(--text-primary);
-      border-color: var(--border-subtle);
-    }
-    .btn-secondary:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      transform: translateY(-2px);
-    }
-    .btn-linkedin {
-      background: rgba(10, 102, 194, 0.14);
-      color: #38bdf8;
-      border-color: rgba(10, 102, 194, 0.4);
-    }
-    .btn-linkedin:hover {
-      background: var(--linkedin-blue);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    /* Quick Metrics Row */
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .metric-item .metric-val {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-    }
-    .metric-item .metric-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Interactive SQL / Analytics Terminal Card */
-    .sql-terminal {
-      background: var(--code-bg);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      box-shadow: var(--shadow-card), var(--shadow-glow);
-      overflow: hidden;
-    }
-    .terminal-bar {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.75rem 1.1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .terminal-dots {
-      display: flex;
-      gap: 6px;
-    }
-    .terminal-dots span {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
-    .dot-red { background: #ef4444; }
-    .dot-amber { background: #f59e0b; }
-    .dot-green { background: #10b981; }
-    .terminal-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: #94a3b8;
-    }
-    .terminal-body {
-      padding: 1.35rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      line-height: 1.7;
-      color: #e2e8f0;
-      overflow-x: auto;
-    }
-    .sql-kw { color: #38bdf8; font-weight: 600; }
-    .sql-fn { color: #c084fc; }
-    .sql-str { color: #34d399; }
-    .sql-comment { color: #64748b; font-style: italic; }
-    .terminal-output {
-      margin-top: 1rem;
-      padding-top: 0.9rem;
-      border-top: 1px dashed rgba(148, 163, 184, 0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      color: #10b981;
-    }
-
-    /* ==========================================================================
-       4. ABOUT & CORE STRENGTHS
-       ========================================================================== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
-      align-items: stretch;
-    }
-    .glass-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem;
-      backdrop-filter: blur(12px);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .glass-card:hover {
-      border-color: var(--border-highlight);
-      box-shadow: var(--shadow-card);
-    }
-    .about-prose p {
-      color: var(--text-secondary);
-      margin-bottom: 1.1rem;
-      font-size: 0.98rem;
-    }
-    .about-prose p:last-child {
-      margin-bottom: 0;
-    }
-    .pillars-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .pillar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 1.25rem 1.4rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .pillar-card:hover {
-      border-color: var(--accent-cyan);
-      transform: translateX(4px);
-    }
-    .pillar-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-cyan);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-    }
-    .pillar-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      color: var(--text-primary);
-    }
-    .pillar-desc {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    /* ==========================================================================
-       5. SKILLS MATRIX
-       ========================================================================== */
-    .skill-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-    .skill-tab-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-    .skill-tab-btn.active,
-    .skill-tab-btn:hover {
-      background: rgba(56, 189, 248, 0.14);
-      color: var(--accent-cyan);
-      border-color: var(--accent-cyan);
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-    }
-    .skill-category-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 1.65rem;
-      transition: all 0.25s ease;
-    }
-    .skill-category-card:hover {
-      border-color: var(--border-highlight);
-      transform: translateY(-4px);
-    }
-    .skill-cat-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.25rem;
-    }
-    .skill-cat-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .skill-cat-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--accent-indigo);
-      background: rgba(129, 140, 248, 0.12);
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-    }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-    .skill-chip {
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding: 0.42rem 0.85rem;
-      border-radius: 8px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      transition: all 0.2s;
-    }
-    .skill-chip.primary-skill {
-      border-color: rgba(56, 189, 248, 0.35);
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.07);
-    }
-    .skill-chip:hover {
-      border-color: var(--accent-cyan);
-      transform: translateY(-1px);
-    }
-
-    /* ==========================================================================
-       6. PROFESSIONAL EXPERIENCE TIMELINE
-       ========================================================================== */
-    .timeline-wrapper {
-      position: relative;
-      padding-left: 2rem;
-    }
-    .timeline-wrapper::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-indigo), transparent);
-    }
-    .timeline-card {
-      position: relative;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .timeline-card:last-child {
-      margin-bottom: 0;
-    }
-    .timeline-card:hover {
-      border-color: var(--border-highlight);
-    }
-    .timeline-dot {
-      position: absolute;
-      left: -2rem;
-      top: 2.1rem;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--bg-primary);
-      border: 3px solid var(--accent-cyan);
-      transform: translateX(-1px);
-    }
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.1rem;
-    }
-    .role-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .company-line {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--accent-indigo);
-      margin-top: 0.2rem;
-    }
-    .date-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-bottom: 1.25rem;
-    }
-    .exp-bullets li {
-      position: relative;
-      padding-left: 1.35rem;
-      color: var(--text-secondary);
-      font-size: 0.93rem;
-    }
-    .exp-bullets li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--accent-cyan);
-      font-weight: bold;
-    }
-    .exp-tech-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .exp-tech-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.73rem;
-      padding: 0.22rem 0.65rem;
-      border-radius: 6px;
-      background: rgba(148, 163, 184, 0.1);
-      color: var(--text-muted);
-    }
-
-    /* ==========================================================================
-       7. FEATURED PROJECTS
-       ========================================================================== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 1.75rem;
-    }
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 1.85rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.28s ease;
-    }
-    .project-card:hover {
-      border-color: var(--accent-cyan);
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-card);
-    }
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.15rem;
-    }
-    .project-type-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.28rem 0.7rem;
-      border-radius: 6px;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-cyan);
-    }
-    .project-context {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .project-title {
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.65rem;
-    }
-    .project-desc {
-      font-size: 0.91rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.1rem;
-    }
-    .project-highlights {
-      list-style: none;
-      margin-bottom: 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-    }
-    .project-highlights li {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      padding-left: 1.15rem;
-      position: relative;
-    }
-    .project-highlights li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent-emerald);
-      font-weight: 700;
-    }
-
-    /* ==========================================================================
-       8. LINKEDIN EMBED & LIVE PROFILE SHOWCASE
-       ========================================================================== */
-    .linkedin-showcase-wrapper {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-    }
-    .embed-browser-bar {
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 0.85rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .embed-url-box {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-subtle);
-      padding: 0.38rem 0.9rem;
-      border-radius: 8px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      flex: 1;
-      max-width: 480px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .embed-tabs {
-      display: flex;
-      gap: 0.45rem;
-    }
-    .embed-tab-btn {
-      padding: 0.4rem 0.85rem;
-      border-radius: 7px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-primary);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-    .embed-tab-btn.active {
-      background: var(--linkedin-blue);
-      color: #ffffff;
-      border-color: var(--linkedin-blue);
-    }
-    .linkedin-embed-body {
-      padding: 2rem;
-    }
-    .li-banner {
-      height: 110px;
-      border-radius: 12px 12px 0 0;
-      background: linear-gradient(120deg, #0a66c2 0%, #1e293b 55%, #0f172a 100%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 1rem 1.5rem;
-    }
-    .li-banner-code {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.75);
-      background: rgba(0, 0, 0, 0.35);
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-    }
-    .li-profile-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-top: none;
-      border-radius: 0 0 12px 12px;
-      padding: 0 1.75rem 1.75rem;
-    }
-    .li-avatar-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-top: -42px;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .li-avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--linkedin-blue));
-      border: 4px solid var(--bg-secondary);
-      display: grid;
-      place-items: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.65rem;
-      font-weight: 800;
-      color: #ffffff;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-    }
-    .li-name {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-    .li-headline {
-      color: var(--text-secondary);
-      font-size: 0.94rem;
-      margin-top: 0.2rem;
-    }
-    .li-meta {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      margin-top: 0.35rem;
-    }
-    .li-highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1.35rem;
-      padding-top: 1.35rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .li-mini-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 0.9rem 1rem;
-      border-radius: 10px;
-    }
-    .li-mini-box h4 {
-      font-size: 0.82rem;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.3rem;
-    }
-    .li-mini-box p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-    #li-badge-view {
-      display: none;
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    /* ==========================================================================
-       9. CERTIFICATIONS, AWARDS & EDUCATION BENTO
-       ========================================================================== */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .cred-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-    .cred-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.15rem 1.35rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .cred-item:hover {
-      border-color: var(--accent-cyan);
-      transform: translateX(4px);
-    }
-    .cred-badge-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(129, 140, 248, 0.12);
-      color: var(--accent-indigo);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      font-weight: 700;
-    }
-    .cred-title {
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .cred-sub {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 0.15rem;
-    }
-
-    /* ==========================================================================
-       10. CONTACT & FOOTER
-       ========================================================================== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 2.5rem;
-    }
-    .contact-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .contact-card-info {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-    }
-    .copy-btn {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      padding: 0.4rem 0.75rem;
-      border-radius: 7px;
-      font-size: 0.76rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .copy-btn:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 0.4rem;
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-primary);
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent-cyan);
-    }
-
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 2.5rem 0;
-      background: var(--bg-secondary);
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--accent-emerald);
-      color: var(--text-primary);
-      padding: 0.75rem 1.2rem;
-      border-radius: 10px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: var(--shadow-card);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s ease;
-      z-index: 2000;
-    }
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    /* Reveal Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 960px) {
-      .hero-grid,
-      .about-grid,
-      .bento-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .mobile-menu-btn {
-        display: grid;
-      }
-      .nav-links {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--bg-elevated);
-        border-bottom: 1px solid var(--border-subtle);
-        flex-direction: column;
-        padding: 1rem;
-        display: none;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      section {
-        padding: 72px 0;
-      }
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Ambient Background -->
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="ambient-grid"></div>
-    <div class="ambient-orb-1"></div>
-    <div class="ambient-orb-2"></div>
+  <!-- Subtle Architectural Background Texture -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-grid-lines"></div>
+    <div class="bg-radial-emerald"></div>
+    <div class="bg-radial-sand"></div>
   </div>
 
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="brand">
-        <span class="brand-badge">KR</span>
-        <span>Kiruthick Raajaa <span style="color: var(--accent-cyan);">J S</span></span>
+  <!-- Floating Command Dock Navigation -->
+  <header class="site-header">
+    <div class="dock-nav-wrapper">
+      <a href="#hero" class="brand-mark" aria-label="Home">
+        <span class="brand-monogram" id="navMonogram">KR</span>
+        <span class="brand-text" id="navName">Kiruthick Raajaa</span>
       </a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#linkedin-hub">LinkedIn</a></li>
-          <li><a href="#credentials">Credentials</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list" id="navList">
+          <li><a href="#about" class="nav-link"><span class="nav-idx">01</span>About</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-idx">02</span>Skills</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-idx">03</span>Experience</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-idx">04</span>Projects</a></li>
+          <li><a href="#linkedin-section" class="nav-link"><span class="nav-idx">05</span>LinkedIn</a></li>
+          <li><a href="#credentials" class="nav-link"><span class="nav-idx">06</span>Credentials</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-idx">07</span>Contact</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle Dark/Light Mode">
-          <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="header-controls">
+        <button class="icon-btn" id="themeToggleBtn" type="button" aria-label="Switch color theme" title="Toggle Charcoal/Alabaster Theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
           </svg>
         </button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+        <a href="#contact" class="btn btn-emerald btn-sm hide-mobile">Hire / Connect</a>
+        <button class="icon-btn mobile-toggle" id="mobileMenuBtn" type="button" aria-label="Toggle Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="14" y2="17"></line>
           </svg>
         </button>
       </div>
@@ -1223,100 +70,142 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section id="hero">
+    <!-- 00. HERO SECTION -->
+    <section id="hero" class="hero-section">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content reveal">
-            <div class="status-pill">
-              <span class="status-dot"></span>
-              <span>Programmer Analyst @ Sterlo · Open to Data & SQL Opportunities</span>
+        <div class="hero-layout">
+          <!-- Left Column: Editorial Typography & Interactive Controls -->
+          <div class="hero-copy reveal in-view">
+            <div class="availability-tag">
+              <span class="pulse-dot"></span>
+              <span id="heroStatus">Available for Data, SQL &amp; Software Engineering Roles</span>
             </div>
 
-            <h1 class="hero-title">
-              Kiruthick Raajaa <span class="gradient-text">J S</span>
+            <h1 class="hero-heading">
+              <span class="hero-name-main" id="heroName">Kiruthick Raajaa J S</span>
+              <span class="hero-role-serif" id="heroRole">Programmer Analyst</span>
             </h1>
 
-            <p class="hero-subtitle">
-              <span>SQL & Database Engineering</span>
-              <span style="color: var(--accent-cyan);">·</span>
-              <span>Interactive Dashboards</span>
-              <span style="color: var(--accent-cyan);">·</span>
-              <span>Application Development</span>
+            <p class="hero-tagline mono" id="heroTagline">
+              SQL Architecture · Business Intelligence · Full-Stack Workflows
             </p>
 
-            <p class="hero-description">
-              Programmer Analyst specializing in designing high-performance <strong>MS SQL solutions</strong>, optimizing complex query execution plans, and building <strong>interactive compliance & operational dashboards</strong>. Bridging raw business logic and audit-ready analytics across enterprise modules.
+            <p class="hero-lead" id="heroIntro">
+              Designing high-performance MS SQL solutions, optimizing query execution plans, and building interactive compliance &amp; operational dashboards that transform complex business rules into audit-ready systems.
             </p>
 
-            <div class="btn-group">
-              <a href="#projects" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                Explore Projects
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-emerald">
+                <span>View Case Studies</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn Profile
+              <a href="https://www.linkedin.com/in/kiruthickraajaajs/" id="heroLinkedinBtn" target="_blank" rel="noopener noreferrer" class="btn btn-sand">
+                <span>LinkedIn Profile</span>
               </a>
-              <a href="https://www.hackerrank.com/profile/kiruthickraajaa" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1.285 0 9.75 4.886 10.392 6 .645 1.115.645 10.885 0 12S13.287 24 12 24s-9.75-4.885-10.392-6c-.645-1.115-.645-10.885 0-12C2.25 4.886 10.715 0 12 0zm2.295 6.799c-.141 0-.258.115-.258.258v3.875H9.963V6.799h-.008c0-.141-.115-.258-.258-.258H8.32c-.141 0-.259.117-.259.258v10.402c0 .143.118.258.259.258h1.377c.141 0 .258-.115.258-.258v-4.007h4.074v4.007c0 .143.115.258.258.258h1.377c.141 0 .258-.115.258-.258V7.057c0-.141-.117-.258-.258-.258h-1.377z"/></svg>
-                HackerRank (SQL Adv)
+              <a href="https://www.hackerrank.com/profile/kiruthickraajaa" id="heroHackerrankBtn" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <span>HackerRank</span>
               </a>
+              <button type="button" class="btn btn-outline" id="toggleSqlModalBtn">
+                <span class="mono">{SQL}</span>
+                <span>Inspect Sample Query</span>
+              </button>
             </div>
 
-            <div class="hero-metrics">
-              <div class="metric-item">
-                <div class="metric-val">1.5+ yrs</div>
-                <div class="metric-label">Enterprise SQL & BI</div>
+            <!-- Collapsible Live SQL Architecture Drawer -->
+            <div class="sql-drawer" id="sqlDrawer" hidden>
+              <div class="sql-drawer-header">
+                <span class="mono" id="sqlFilename">compliance_audit_pipeline.sql</span>
+                <span class="sql-status-badge mono" id="sqlExecNote">Execution Plan: Index Seek · 12 ms</span>
               </div>
-              <div class="metric-item">
-                <div class="metric-val">15+</div>
-                <div class="metric-label">Clinical & ERP Workflows</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-val">Top 100</div>
-                <div class="metric-label">Smart India Hackathon</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-val">4</div>
-                <div class="metric-label">Verified Certifications</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive SQL Engineering Preview Card -->
-          <div class="sql-terminal reveal">
-            <div class="terminal-bar">
-              <div class="terminal-dots">
-                <span class="dot-red"></span>
-                <span class="dot-amber"></span>
-                <span class="dot-green"></span>
-              </div>
-              <span class="terminal-title">sterlo_analytics :: compliance_kpi_summary.sql</span>
-            </div>
-            <div class="terminal-body">
-<pre><code><span class="sql-comment">-- Enterprise Reporting &amp; Execution Plan Optimization</span>
-<span class="sql-kw">WITH</span> ModuleComplianceCTE <span class="sql-kw">AS</span> (
-  <span class="sql-kw">SELECT</span>
-    m.module_name,
-    <span class="sql-fn">COUNT</span>(w.workflow_id) <span class="sql-kw">AS</span> total_workflows,
-    <span class="sql-fn">AVG</span>(w.execution_ms)  <span class="sql-kw">AS</span> avg_latency_ms,
-    <span class="sql-fn">SUM</span>(<span class="sql-kw">CASE WHEN</span> w.audit_ready = 1 <span class="sql-kw">THEN</span> 1 <span class="sql-kw">ELSE</span> 0 <span class="sql-kw">END</span>) <span class="sql-kw">AS</span> verified
-  <span class="sql-kw">FROM</span> dbo.EnterpriseWorkflows w <span class="sql-kw">WITH</span> (NOLOCK)
-  <span class="sql-kw">INNER JOIN</span> dbo.BusinessModules m
-    <span class="sql-kw">ON</span> w.module_id = m.module_id
-  <span class="sql-kw">WHERE</span> m.domain <span class="sql-kw">IN</span> (<span class="sql-str">'HAIS_InfectionControl'</span>, <span class="sql-str">'VendorPortal'</span>)
-  <span class="sql-kw">GROUP BY</span> m.module_name
+              <pre class="sql-code-block"><code id="sqlCodeContent">-- Optimizing Enterprise Module Reporting &amp; Audit Readiness
+WITH WorkflowMetrics AS (
+  SELECT 
+    module_code,
+    COUNT(workflow_id) AS total_executions,
+    AVG(duration_ms)   AS avg_query_time_ms,
+    SUM(CASE WHEN audit_status = 'VERIFIED' THEN 1 ELSE 0 END) AS compliant_runs
+  FROM dbo.OperationalWorkflows WITH (NOLOCK)
+  WHERE execution_date >= DATEADD(MONTH, -6, GETDATE())
+  GROUP BY module_code
 )
-<span class="sql-kw">SELECT</span>
-  module_name,
-  total_workflows,
-  <span class="sql-fn">CAST</span>((verified * 100.0 / total_workflows) <span class="sql-kw">AS</span> DECIMAL(5,2)) <span class="sql-kw">AS</span> audit_score_pct
-<span class="sql-kw">FROM</span> ModuleComplianceCTE
-<span class="sql-kw">ORDER BY</span> audit_score_pct <span class="sql-kw">DESC</span>;</code></pre>
-              <div class="terminal-output">
-                <span>✓ Query executed: 2 rows returned (14 ms)</span>
-                <span>HackerRank: SQL (Advanced)</span>
+SELECT 
+  module_code,
+  total_executions,
+  avg_query_time_ms,
+  CAST((compliant_runs * 100.0 / NULLIF(total_executions, 0)) AS DECIMAL(5,2)) AS compliance_rate_pct
+FROM WorkflowMetrics
+ORDER BY compliance_rate_pct DESC;</code></pre>
+            </div>
+
+            <!-- Key Metrics Strip -->
+            <div class="hero-stats-bar" id="heroStatsBar">
+              <div class="stat-cell">
+                <div class="stat-cell-val">1+</div>
+                <div class="stat-cell-lbl mono">Years Enterprise Experience</div>
+              </div>
+              <div class="stat-cell">
+                <div class="stat-cell-val">15+</div>
+                <div class="stat-cell-lbl mono">Production Workflows Built</div>
+              </div>
+              <div class="stat-cell">
+                <div class="stat-cell-val">Top 100</div>
+                <div class="stat-cell-lbl mono">Smart India Hackathon</div>
+              </div>
+              <div class="stat-cell">
+                <div class="stat-cell-val">7.7</div>
+                <div class="stat-cell-lbl mono">B.Tech IT CGPA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Architectural Portrait Showcase -->
+          <div class="hero-portrait-col reveal in-view">
+            <div class="portrait-architectural-frame">
+              <div class="frame-corner corner-tl"></div>
+              <div class="frame-corner corner-tr"></div>
+              <div class="frame-corner corner-bl"></div>
+              <div class="frame-corner corner-br"></div>
+
+              <div class="portrait-media-box" id="portraitContainer">
+                <!-- Change src below to your image path (e.g. "assets/images/profile.jpg" or "assets/icons/gemini-svg.svg") -->
+                <img
+                  id="heroProfileImg"
+                  src="assets/icons/new.jpg"
+                  alt="Portrait of Kiruthick Raajaa J S"
+                  class="portrait-img"
+                />
+
+                <!-- Graceful Editorial Fallback if image file cannot be found -->
+                <div class="portrait-fallback" id="portraitFallback" hidden>
+                  <div class="fallback-avatar-ring">
+                    <span class="fallback-initials" id="fallbackInitials">KR</span>
+                  </div>
+                  <p class="fallback-title">Kiruthick Raajaa J S</p>
+                  <p class="fallback-sub mono">Programmer Analyst · SQL &amp; BI</p>
+                  <label for="localPhotoInput" class="btn btn-outline btn-xs fallback-upload-btn">
+                    Upload / Preview Photo
+                  </label>
+                </div>
+                <input type="file" id="localPhotoInput" accept="image/*" hidden />
+              </div>
+
+              <div class="portrait-caption-bar">
+                <div>
+                  <p class="caption-name">Kiruthick Raajaa J S</p>
+                  <p class="caption-sub mono">Coimbatore, TN · SQL (Advanced)</p>
+                </div>
+                <!-- <label for="localPhotoInput" class="caption-upload-link mono" title="Click to preview a local photo">
+                  Change Photo
+                </label> -->
+              </div>
+
+              <!-- Floating Credential Badges -->
+              <div class="floating-chip chip-top">
+                <span class="chip-dot"></span>
+                <span class="mono">HackerRank · SQL (Advanced)</span>
+              </div>
+              <div class="floating-chip chip-bottom">
+                <span class="mono">SIH Top 100 Finalist</span>
               </div>
             </div>
           </div>
@@ -1324,395 +213,353 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" style="background: var(--bg-secondary);">
+    <!-- 01. ABOUT SECTION -->
+    <section id="about" class="section section-alt">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">01 / Profile Summary</span>
-          <h2 class="section-title">Engineering Reliable Data & Reporting Systems</h2>
-          <p class="section-subtitle">
-            Combining relational database craftsmanship with interactive dashboard development and cross-functional requirement analysis.
-          </p>
+        <div class="section-top reveal">
+          <span class="section-index mono">01 // PROFILE MANIFESTO</span>
+          <h2 class="section-heading">Bridging Relational Data &amp; Decision Intelligence</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="glass-card about-prose reveal">
-            <p>
-              I am a <strong>Programmer Analyst at Sterlo</strong> based in Coimbatore, Tamil Nadu, where I architect, maintain, and optimize SQL-driven reporting pipelines and interactive enterprise dashboards across healthcare and procurement modules.
-            </p>
-            <p>
-              My daily engineering work centers on translating complex operational requirements from product, clinical compliance, and quality assurance teams into fast, reliable <strong>MS SQL queries, stored procedures, custom report templates, and low-code/web interfaces</strong> that reduce manual reporting overhead and strengthen audit readiness.
-            </p>
-            <p>
-              Beyond database engineering, I build responsive front-end interfaces with <strong>JavaScript and React.js</strong>, write automation and data analysis scripts in <strong>Python</strong>, and bring proven leadership as a <strong>Smart India Hackathon Top 100 Finalist</strong> and published researcher.
-            </p>
+        <div class="about-editorial-grid">
+          <div class="about-narrative reveal" id="aboutNarrative">
+            <p>I am a Programmer Analyst based in Coimbatore, Tamil Nadu, specializing in relational database engineering, custom report automation, and interactive dashboard development across enterprise software modules.</p>
+            <p>My work bridges raw operational data and executive decision-making—translating requirements from product, compliance, and quality assurance stakeholders into optimized T-SQL queries, reusable report templates, and low-code/web interfaces that reduce manual effort.</p>
+            <p>Beyond SQL and analytics, I develop full-stack workflows using Python, JavaScript, and React.js, backed by national recognition as a Smart India Hackathon Top 100 Finalist and published academic researcher.</p>
           </div>
 
-          <div class="pillars-list reveal">
-            <div class="pillar-card">
-              <div class="pillar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              </div>
+          <div class="about-pillars-grid reveal" id="aboutPillars">
+            <article class="pillar-item">
+              <span class="pillar-num">01</span>
               <div>
-                <h3 class="pillar-title">SQL Performance & Query Tuning</h3>
-                <p class="pillar-desc">Analyzing execution plans, isolating bottlenecks, and writing complex CTEs, aggregations, and dynamic SQL in MS SQL & MySQL.</p>
+                <h3>SQL Engineering &amp; Query Tuning</h3>
+                <p>Writing complex T-SQL stored procedures, CTEs, and aggregations while inspecting query execution plans to eliminate performance bottlenecks.</p>
               </div>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-              </div>
+            </article>
+            <article class="pillar-item">
+              <span class="pillar-num">02</span>
               <div>
-                <h3 class="pillar-title">BI Dashboards & Custom Reporting</h3>
-                <p class="pillar-desc">Building interactive KPI dashboards and automated report templates that eliminate repetitive manual tracking.</p>
+                <h3>Interactive BI &amp; Audit Reporting</h3>
+                <p>Architecting real-time operational dashboards and automated custom report templates that improve team efficiency and audit readiness.</p>
               </div>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </div>
+            </article>
+            <article class="pillar-item">
+              <span class="pillar-num">03</span>
               <div>
-                <h3 class="pillar-title">Low-Code & Full-Stack Application Logic</h3>
-                <p class="pillar-desc">Developing end-to-end module workflows on Sterlo's enterprise platform alongside Python, JavaScript, and React.js.</p>
+                <h3>Application &amp; Workflow Automation</h3>
+                <p>Building responsive front-end components and automated enterprise workflows using Python, React.js, JavaScript, and low-code platforms.</p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills">
+    <!-- 02. TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">02 / Technical Arsenal</span>
-          <h2 class="section-title">Skills & Core Competencies</h2>
-          <p class="section-subtitle">
-            Organized by technical domain so recruiters and engineering managers can quickly assess role alignment.
-          </p>
-        </div>
-
-        <div class="skill-tabs reveal" role="tablist" aria-label="Skill category filter">
-          <button class="skill-tab-btn active" data-filter="all">All Domains</button>
-          <button class="skill-tab-btn" data-filter="sql">Database & SQL</button>
-          <button class="skill-tab-btn" data-filter="bi">BI & Data Visualization</button>
-          <button class="skill-tab-btn" data-filter="dev">App & Web Development</button>
-          <button class="skill-tab-btn" data-filter="prof">Engineering Practices</button>
-        </div>
-
-        <div class="skills-grid reveal">
-          <div class="skill-category-card" data-category="sql">
-            <div class="skill-cat-header">
-              <h3 class="skill-cat-title">Database & SQL Engineering</h3>
-              <span class="skill-cat-tag">Core Strength</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-chip primary-skill">MS SQL Server (T-SQL)</span>
-              <span class="skill-chip primary-skill">Query Optimization</span>
-              <span class="skill-chip primary-skill">Execution Plan Analysis</span>
-              <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">Stored Procedures & CTEs</span>
-              <span class="skill-chip">Advanced Aggregations</span>
-              <span class="skill-chip">Dynamic SQL & JSON Parsing</span>
-              <span class="skill-chip">Relational Schema Design</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card" data-category="bi">
-            <div class="skill-cat-header">
-              <h3 class="skill-cat-title">BI, Reporting & Analytics</h3>
-              <span class="skill-cat-tag">Analytics</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-chip primary-skill">Dashboard Development</span>
-              <span class="skill-chip primary-skill">Data Visualization</span>
-              <span class="skill-chip primary-skill">Custom Report Generation</span>
-              <span class="skill-chip">Compliance & Audit Reporting</span>
-              <span class="skill-chip">Data Interpretation</span>
-              <span class="skill-chip">Performance KPI Tracking</span>
-              <span class="skill-chip">Root-Cause Data Debugging</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card" data-category="dev">
-            <div class="skill-cat-header">
-              <h3 class="skill-cat-title">Application & Web Development</h3>
-              <span class="skill-cat-tag">Full Stack</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-chip primary-skill">Python 3</span>
-              <span class="skill-chip primary-skill">JavaScript (ES6+)</span>
-              <span class="skill-chip primary-skill">React.js</span>
-              <span class="skill-chip">HTML5 & Modern CSS3</span>
-              <span class="skill-chip">Sterlo Low-Code Platform</span>
-              <span class="skill-chip">Workflow Automation</span>
-              <span class="skill-chip">UI Component Templates</span>
-            </div>
-          </div>
-
-          <div class="skill-category-card" data-category="prof">
-            <div class="skill-cat-header">
-              <h3 class="skill-cat-title">Delivery & Collaboration</h3>
-              <span class="skill-cat-tag">SDLC</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-chip primary-skill">Requirement Gathering</span>
-              <span class="skill-chip primary-skill">SDLC Best Practices</span>
-              <span class="skill-chip">Cross-Team Coordination</span>
-              <span class="skill-chip">Technical Documentation</span>
-              <span class="skill-chip">Analytical Problem Solving</span>
-              <span class="skill-chip">Git & GitHub</span>
-              <span class="skill-chip">SSMS & VS Code</span>
+        <div class="section-top reveal">
+          <span class="section-index mono">02 // TECHNICAL ARSENAL</span>
+          <div class="section-top-flex">
+            <h2 class="section-heading">Capabilities &amp; Domain Matrix</h2>
+            <div class="skill-filter-bar" id="skillFilterBar" role="tablist" aria-label="Filter skills by category">
+              <button class="filter-chip active" data-filter="all" type="button">All Domains</button>
+              <button class="filter-chip" data-filter="database" type="button">Database &amp; SQL</button>
+              <button class="filter-chip" data-filter="analytics" type="button">BI &amp; Reporting</button>
+              <button class="filter-chip" data-filter="development" type="button">App &amp; Web Stack</button>
+              <button class="filter-chip" data-filter="practices" type="button">Engineering Process</button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- PROFESSIONAL EXPERIENCE SECTION -->
-    <section id="experience" style="background: var(--bg-secondary);">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">03 / Career Progression</span>
-          <h2 class="section-title">Professional Experience</h2>
-          <p class="section-subtitle">
-            Proven track record of delivering enterprise SQL reporting, compliance workflows, and dashboard solutions at Sterlo.
-          </p>
-        </div>
-
-        <div class="timeline-wrapper">
-          <!-- Role 1 -->
-          <article class="timeline-card reveal">
-            <span class="timeline-dot"></span>
-            <div class="timeline-header">
-              <div>
-                <h3 class="role-title">Programmer Analyst</h3>
-                <p class="company-line">Sterlo · Full-Time · Coimbatore, India</p>
-              </div>
-              <span class="date-badge">Jul 2025 – Present</span>
+        <div class="skills-bento-grid reveal" id="skillsGrid">
+          <article class="skill-domain-card" data-domain="database">
+            <div class="domain-header">
+              <h3 class="domain-title">Database &amp; SQL Engineering</h3>
+              <span class="domain-badge">Primary Core</span>
             </div>
-            <ul class="exp-bullets">
-              <li>Designed and maintained complex <strong>MS SQL queries and interactive dashboards</strong> supporting critical reporting operations across enterprise business modules.</li>
-              <li>Performed deep-dive data analysis and engineered reusable <strong>custom report templates</strong>, cutting manual reporting effort and improving audit readiness across teams.</li>
-              <li>Diagnosed and resolved production data discrepancies and reporting latency by inspecting <strong>SQL query execution plans</strong> and eliminating performance bottlenecks.</li>
-              <li>Partnered directly with product, compliance, and quality stakeholders to gather specifications, maintain rigorous report documentation, and ensure data accuracy.</li>
-              <li>Leveraged advanced T-SQL aggregations, joins, and procedural logic to transform complex business rules into responsive dashboards and automated workflows.</li>
-            </ul>
-            <div class="exp-tech-row">
-              <span class="exp-tech-pill">MS SQL Server</span>
-              <span class="exp-tech-pill">Query Optimization</span>
-              <span class="exp-tech-pill">Dashboard Development</span>
-              <span class="exp-tech-pill">Execution Plans</span>
-              <span class="exp-tech-pill">Compliance Reporting</span>
+            <div class="skill-pill-cluster">
+              <span class="skill-tag featured">MS SQL Server (T-SQL)</span>
+              <span class="skill-tag featured">Query Optimization</span>
+              <span class="skill-tag featured">Execution Plan Analysis</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag featured">Stored Procedures &amp; CTEs</span>
+              <span class="skill-tag">Complex Aggregations</span>
+              <span class="skill-tag">Dynamic SQL &amp; JSON Parsing</span>
+              <span class="skill-tag">Relational Data Modeling</span>
             </div>
           </article>
 
-          <!-- Role 2 -->
-          <article class="timeline-card reveal">
-            <span class="timeline-dot" style="border-color: var(--accent-indigo);"></span>
-            <div class="timeline-header">
-              <div>
-                <h3 class="role-title">Programmer Analyst Trainee</h3>
-                <p class="company-line">Sterlo · Trainee · Coimbatore, India</p>
-              </div>
-              <span class="date-badge" style="color: var(--accent-indigo); border-color: rgba(129,140,248,0.3); background: rgba(129,140,248,0.12);">Feb 2025 – Jun 2025</span>
+          <article class="skill-domain-card" data-domain="analytics">
+            <div class="domain-header">
+              <h3 class="domain-title">BI, Dashboards &amp; Reporting</h3>
+              <span class="domain-badge">Analytics</span>
             </div>
-            <ul class="exp-bullets">
-              <li>Completed intensive hands-on implementation training across Sterlo's low-code application platform and core enterprise product modules.</li>
-              <li>Collaborated with senior engineers to write relational queries, configure operational reports, and build visual dashboard components.</li>
-              <li>Gained practical expertise in stakeholder requirement analysis, structured data validation, and business intelligence visualization patterns.</li>
-              <li>Adopted enterprise software development lifecycle (SDLC) standards, version control workflows, and technical documentation practices.</li>
-            </ul>
-            <div class="exp-tech-row">
-              <span class="exp-tech-pill">Low-Code Platform</span>
-              <span class="exp-tech-pill">SQL Queries</span>
-              <span class="exp-tech-pill">Data Visualization</span>
-              <span class="exp-tech-pill">SDLC & Documentation</span>
+            <div class="skill-pill-cluster">
+              <span class="skill-tag featured">Dashboard Development</span>
+              <span class="skill-tag featured">Data Visualization</span>
+              <span class="skill-tag featured">Custom Report Generation</span>
+              <span class="skill-tag">Compliance &amp; Audit Metrics</span>
+              <span class="skill-tag">Data Interpretation</span>
+              <span class="skill-tag featured">Root-Cause Data Debugging</span>
+            </div>
+          </article>
+
+          <article class="skill-domain-card" data-domain="development">
+            <div class="domain-header">
+              <h3 class="domain-title">Application &amp; Web Stack</h3>
+              <span class="domain-badge">Development</span>
+            </div>
+            <div class="skill-pill-cluster">
+              <span class="skill-tag featured">Python 3</span>
+              <span class="skill-tag featured">React.js</span>
+              <span class="skill-tag featured">JavaScript (ES6+)</span>
+              <span class="skill-tag">HTML5 &amp; Modern CSS3</span>
+              <span class="skill-tag">Low-Code Workflow Platforms</span>
+              <span class="skill-tag">RESTful Data Integration</span>
+            </div>
+          </article>
+
+          <article class="skill-domain-card" data-domain="practices">
+            <div class="domain-header">
+              <h3 class="domain-title">Delivery &amp; Engineering Process</h3>
+              <span class="domain-badge">Methodology</span>
+            </div>
+            <div class="skill-pill-cluster">
+              <span class="skill-tag featured">Requirement Gathering</span>
+              <span class="skill-tag featured">Cross-Team Coordination</span>
+              <span class="skill-tag">SDLC Best Practices</span>
+              <span class="skill-tag">Technical Documentation</span>
+              <span class="skill-tag">Analytical Thinking</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS SECTION -->
-    <section id="projects">
+    <!-- 03. PROFESSIONAL EXPERIENCE (Career Ledger) -->
+    <section id="experience" class="section section-alt">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">04 / Key Deliverables & Research</span>
-          <h2 class="section-title">Featured Enterprise & Academic Projects</h2>
-          <p class="section-subtitle">
-            Real-world enterprise modules built at Sterlo alongside published academic research.
-          </p>
+        <div class="section-top reveal">
+          <span class="section-index mono">03 // CAREER LEDGER</span>
+          <h2 class="section-heading">Professional Experience &amp; Progression</h2>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <article class="project-card reveal">
+        <div class="experience-ledger" id="experienceLedger">
+          <article class="ledger-row reveal">
+            <div class="ledger-meta">
+              <div class="ledger-idx">01</div>
+              <span class="ledger-period mono">Jul 2025 – Present</span>
+              <p class="ledger-org">Enterprise Software &amp; BI Solutions</p>
+              <p class="ledger-org mono" style="font-size:0.75rem;">Coimbatore, Tamil Nadu</p>
+            </div>
+            <div class="ledger-content">
+              <h3 class="ledger-role-title">Programmer Analyst</h3>
+              <p class="ledger-summary">Leading SQL query architecture, custom report automation, and interactive dashboard engineering across enterprise business modules.</p>
+              <ul class="ledger-Points">
+                <li>Designed and maintained high-performance MS SQL queries and interactive dashboards to support reporting activities across core business modules.</li>
+                <li>Assisted in deep-dive data analysis and engineered reusable custom report templates, significantly reducing manual reporting efforts and improving audit readiness.</li>
+                <li>Troubleshot complex production data and reporting issues by analyzing SQL query execution plans and isolating performance bottlenecks.</li>
+                <li>Coordinated directly with product, compliance, and quality teams to gather requirements, ensure accurate report documentation, and keep records up to date.</li>
+                <li>Leveraged MS SQL and advanced aggregations to transform raw business requirements into scalable data solutions and executive dashboards.</li>
+              </ul>
+              <div class="tech-stack-strip">
+                <span class="tech-mini-pill">MS SQL</span>
+                <span class="tech-mini-pill">Query Optimization</span>
+                <span class="tech-mini-pill">Execution Plans</span>
+                <span class="tech-mini-pill">Dashboard Development</span>
+                <span class="tech-mini-pill">Report Automation</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="ledger-row reveal">
+            <div class="ledger-meta">
+              <div class="ledger-idx">02</div>
+              <span class="ledger-period mono">Feb 2025 – Jun 2025</span>
+              <p class="ledger-org">Enterprise Software &amp; BI Solutions</p>
+              <p class="ledger-org mono" style="font-size:0.75rem;">Coimbatore, Tamil Nadu</p>
+            </div>
+            <div class="ledger-content">
+              <h3 class="ledger-role-title">Programmer Analyst Trainee</h3>
+              <p class="ledger-summary">Focused on enterprise low-code module development, relational query authoring, and structured BI reporting workflows.</p>
+              <ul class="ledger-Points">
+                <li>Completed intensive hands-on training in enterprise low-code application platforms and core business product modules.</li>
+                <li>Assisted in developing relational SQL queries, operational reports, and interactive dashboards under senior engineering guidance.</li>
+                <li>Gained practical exposure to stakeholder requirement analysis, structured reporting, and data visualization techniques.</li>
+                <li>Applied industry best practices in technical documentation, coding standards, and the software development lifecycle (SDLC).</li>
+              </ul>
+              <div class="tech-stack-strip">
+                <span class="tech-mini-pill">SQL</span>
+                <span class="tech-mini-pill">Data Visualization</span>
+                <span class="tech-mini-pill">Low-Code Modules</span>
+                <span class="tech-mini-pill">Requirement Analysis</span>
+                <span class="tech-mini-pill">SDLC</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. FEATURED PROJECTS (Case Studies) -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-top reveal">
+          <span class="section-index mono">04 // SELECTED WORKS</span>
+          <h2 class="section-heading">Enterprise Modules &amp; Research Case Studies</h2>
+        </div>
+
+        <div class="projects-case-grid" id="projectsGrid">
+          <article class="case-card reveal">
             <div>
-              <div class="project-top">
-                <span class="project-type-badge">Healthcare SQL & BI</span>
-                <span class="project-context">Sterlo Enterprise</span>
+              <div class="case-top-bar">
+                <span class="case-number">01</span>
+                <span class="case-cat-tag">Healthcare SQL &amp; BI</span>
               </div>
-              <h3 class="project-title">HAIS — Infection Control & Compliance Module</h3>
-              <p class="project-desc">
-                Architected SQL-backed clinical surveillance workflows and audit-ready compliance dashboards for hospital-acquired infection tracking.
-              </p>
-              <ul class="project-highlights">
-                <li>Engineered 15+ clinical pharmacy, nursing, and infection control utilization workflows.</li>
-                <li>Built dynamic MS SQL aggregation queries and custom report templates for real-time compliance monitoring.</li>
-                <li>Reduced manual audit preparation effort through automated data validation and KPI dashboards.</li>
+              <h3 class="case-title">HAIS — Healthcare Infection Control &amp; Compliance System</h3>
+              <p class="case-summary">Architected SQL-driven clinical surveillance workflows and audit-ready compliance dashboards for tracking and preventing hospital-acquired infections.</p>
+              <div class="case-challenge-box"><strong>Challenge:</strong> Clinical pharmacy, nursing, and quality teams needed unified tracking and automated compliance reporting across diverse infection surveillance workflows.</div>
+              <ul class="case-outcomes">
+                <li>Developed 15+ end-to-end clinical pharmacy, nursing, and infection control utilization workflows.</li>
+                <li>Engineered optimized MS SQL aggregation queries powering real-time compliance dashboards.</li>
+                <li>Created standardized custom report templates that reduced manual reporting overhead.</li>
               </ul>
             </div>
-            <div class="exp-tech-row">
-              <span class="exp-tech-pill">MS SQL</span>
-              <span class="exp-tech-pill">Compliance Dashboards</span>
-              <span class="exp-tech-pill">Workflow Automation</span>
-              <span class="exp-tech-pill">Sterlo Platform</span>
+            <div class="tech-stack-strip">
+              <span class="tech-mini-pill">MS SQL</span>
+              <span class="tech-mini-pill">Dashboard Development</span>
+              <span class="tech-mini-pill">Compliance Reporting</span>
+              <span class="tech-mini-pill">Workflow Automation</span>
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="project-card reveal">
+          <article class="case-card reveal">
             <div>
-              <div class="project-top">
-                <span class="project-type-badge">Procurement & ERP</span>
-                <span class="project-context">Sterlo Enterprise</span>
+              <div class="case-top-bar">
+                <span class="case-number">02</span>
+                <span class="case-cat-tag">Procurement &amp; Database Logic</span>
               </div>
-              <h3 class="project-title">Enterprise Vendor Portal & RFQ Module</h3>
-              <p class="project-desc">
-                Developed end-to-end digital procurement workflows streamlining vendor onboarding, purchase requisitions, and Request for Quotation (RFQ) routing.
-              </p>
-              <ul class="project-highlights">
-                <li>Designed relational SQL backend logic and stored procedures governing multi-stage approval workflows.</li>
-                <li>Created interactive tracking dashboards providing real-time visibility into vendor status and quote comparisons.</li>
-                <li>Improved cross-team coordination by standardizing procurement data capture and reporting templates.</li>
+              <h3 class="case-title">Enterprise Vendor Portal &amp; RFQ Routing System</h3>
+              <p class="case-summary">Built structured digital procurement workflows managing vendor onboarding, purchase requests, and Request for Quotation (RFQ) lifecycle tracking.</p>
+              <div class="case-challenge-box"><strong>Challenge:</strong> Procurement operations required transparent multi-stage routing for vendor registration, quote comparison, and purchase approvals.</div>
+              <ul class="case-outcomes">
+                <li>Implemented SQL-driven backend logic and stored procedures to manage vendor onboarding and RFQ states.</li>
+                <li>Designed operational dashboards giving stakeholders real-time visibility into pending requisitions.</li>
+                <li>Improved data consistency across procurement and finance teams through structured validation rules.</li>
               </ul>
             </div>
-            <div class="exp-tech-row">
-              <span class="exp-tech-pill">T-SQL & Stored Procs</span>
-              <span class="exp-tech-pill">Data Reporting</span>
-              <span class="exp-tech-pill">JavaScript / UI</span>
-              <span class="exp-tech-pill">Process Automation</span>
+            <div class="tech-stack-strip">
+              <span class="tech-mini-pill">MS SQL</span>
+              <span class="tech-mini-pill">Stored Procedures</span>
+              <span class="tech-mini-pill">JavaScript</span>
+              <span class="tech-mini-pill">Custom Reports</span>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article class="project-card reveal">
+          <article class="case-card reveal">
             <div>
-              <div class="project-top">
-                <span class="project-type-badge">Published Research</span>
-                <span class="project-context">B.Tech Capstone · 2024</span>
+              <div class="case-top-bar">
+                <span class="case-number">03</span>
+                <span class="case-cat-tag">Published Research · 2024</span>
               </div>
-              <h3 class="project-title">Early Identification of Dyslexia in Toddlers</h3>
-              <p class="project-desc">
-                Co-authored and published peer-reviewed research exploring assistive screening and early detection methodologies for dyslexia in young children.
-              </p>
-              <ul class="project-highlights">
-                <li>Designed structured screening criteria and data analysis pipelines to identify early behavioral and learning indicators.</li>
-                <li>Published research findings in an academic journal alongside B.Tech IT capstone implementation.</li>
-                <li>Combined analytical modeling with accessible interface design to support educators and parents.</li>
+              <h3 class="case-title">Early Identification of Dyslexia in Toddlers</h3>
+              <p class="case-summary">Co-authored and published academic research developing an analytical screening methodology to detect early indicators of dyslexia in young learners.</p>
+              <div class="case-challenge-box"><strong>Challenge:</strong> Early-stage dyslexia often goes undiagnosed in toddlers due to a lack of accessible, structured screening tools for pre-readers.</div>
+              <ul class="case-outcomes">
+                <li>Formulated data-driven assessment criteria and analytical workflows to evaluate early markers.</li>
+                <li>Co-authored and published a peer-reviewed research paper detailing the detection methodology.</li>
+                <li>Combined Python-based data analysis with an intuitive interface for educators and parents.</li>
               </ul>
             </div>
-            <div class="exp-tech-row">
-              <span class="exp-tech-pill">Python</span>
-              <span class="exp-tech-pill">Data Analysis</span>
-              <span class="exp-tech-pill">Research Publication</span>
-              <span class="exp-tech-pill">Healthcare Tech</span>
+            <div class="tech-stack-strip">
+              <span class="tech-mini-pill">Python</span>
+              <span class="tech-mini-pill">Data Analysis</span>
+              <span class="tech-mini-pill">Research Publication</span>
+              <span class="tech-mini-pill">Assistive Tech</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- LINKEDIN EMBED & LIVE PROFILE SHOWCASE -->
-    <section id="linkedin-hub" style="background: var(--bg-secondary);">
+    <!-- 05. LINKEDIN SHOWCASE & EMBED WINDOW -->
+    <section id="linkedin-section" class="section section-alt">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">05 / Professional Network</span>
-          <h2 class="section-title">LinkedIn Profile Showcase</h2>
-          <p class="section-subtitle">
-            Connect with me directly or explore my verified career timeline and official LinkedIn badge below.
-          </p>
-        </div>
-
-        <div class="linkedin-showcase-wrapper reveal">
-          <div class="embed-browser-bar">
-            <div class="terminal-dots">
-              <span class="dot-red"></span>
-              <span class="dot-amber"></span>
-              <span class="dot-green"></span>
-            </div>
-            <div class="embed-url-box">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              <span>https://www.linkedin.com/in/kiruthickraajaajs/</span>
-            </div>
-            <div class="embed-tabs">
-              <button class="embed-tab-btn active" id="btnInteractiveView" type="button">Interactive Profile View</button>
-              <button class="embed-tab-btn" id="btnBadgeView" type="button">Official LinkedIn Badge</button>
+        <div class="section-top reveal">
+          <span class="section-index mono">05 // VERIFIED NETWORK</span>
+          <div class="section-top-flex">
+            <h2 class="section-heading">LinkedIn Live Profile Showcase</h2>
+            <div class="embed-mode-switch">
+              <button type="button" class="filter-chip active" id="tabInteractiveLi">Embedded Profile View</button>
+              <button type="button" class="filter-chip" id="tabOfficialBadge">Official LinkedIn Badge</button>
             </div>
           </div>
+        </div>
 
-          <div class="linkedin-embed-body">
-            <!-- View 1: Rich Interactive Embedded Profile Window -->
-            <div id="li-interactive-view">
-              <div class="li-banner">
-                <span class="li-banner-code">SELECT * FROM Career WHERE Profile = 'kiruthickraajaajs';</span>
-              </div>
-              <div class="li-profile-card">
-                <div class="li-avatar-row">
-                  <div class="li-avatar">KR</div>
-                  <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.55rem 1.15rem; font-size: 0.84rem;">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                      Connect on LinkedIn
-                    </a>
-                    <a href="mailto:kiruthickraajaa@gmail.com" class="btn btn-secondary" style="padding: 0.55rem 1.1rem; font-size: 0.84rem;">
-                      Send Message
-                    </a>
-                  </div>
-                </div>
-
-                <div class="li-name">
-                  <span>Kiruthick Raajaa J S</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#38bdf8" title="Verified Profile"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                </div>
-                <p class="li-headline">
-                  Programmer Analyst at Sterlo · MS SQL | Data Visualization | Interactive Dashboards | Python & React.js
-                </p>
-                <p class="li-meta">
-                  Coimbatore, Tamil Nadu, India · St. Joseph College of Engineering · HackerRank SQL (Advanced) Certified
-                </p>
-
-                <div class="li-highlights-grid">
-                  <div class="li-mini-box">
-                    <h4>Current Role</h4>
-                    <p><strong>Programmer Analyst @ Sterlo</strong> (Jul 2025 – Present) · Previously Trainee (Feb – Jun 2025)</p>
-                  </div>
-                  <div class="li-mini-box">
-                    <h4>Core Focus</h4>
-                    <p>T-SQL Query Optimization, Custom Compliance Dashboards, HAIS & Vendor Portal Modules</p>
-                  </div>
-                  <div class="li-mini-box">
-                    <h4>Honors & Credentials</h4>
-                    <p>SIH Top 100 Finalist · HackerRank SQL (Advanced) · Published Researcher</p>
-                  </div>
-                </div>
-              </div>
+        <div class="li-window-frame reveal">
+          <div class="li-window-bar">
+            <div class="window-controls">
+              <span></span><span></span><span></span>
             </div>
+            <div class="window-address mono" id="liWindowUrl">linkedin.com/in/kiruthickraajaajs</div>
+            <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" class="mono window-ext-link">
+              Open Direct ↗
+            </a>
+          </div>
 
-            <!-- View 2: Official LinkedIn Public Profile Badge -->
-            <div id="li-badge-view">
-              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">
-                Official LinkedIn Embed Badge (rendered via LinkedIn's <code>profile.js</code> SDK):
-              </p>
-              <div style="display: flex; justify-content: center;">
-                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="kiruthickraajaajs" data-version="v1">
-                  <a class="badge-base__link LI-simple-link btn btn-linkedin" href="https://in.linkedin.com/in/kiruthickraajaajs?trk=profile-badge" target="_blank" rel="noopener noreferrer">
-                    View Kiruthick Raajaa J S on LinkedIn
+          <!-- Mode A: Rich Embedded Profile View -->
+          <div class="li-window-content" id="liInteractivePanel">
+            <div class="li-cover-strip">
+              <span class="mono">SQL · DATA VISUALIZATION · DASHBOARD ENGINEERING · PYTHON &amp; REACT</span>
+            </div>
+            <div class="li-body-wrap">
+              <div class="li-header-row">
+                <div class="li-avatar-box">
+                  <img id="liEmbedImg" src="assets/icons/new.jpg" alt="Kiruthick Raajaa J S" />
+                  <span id="liEmbedInitials" class="li-embed-initials" hidden>KR</span>
+                </div>
+                <div class="li-cta-actions">
+                  <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm">
+                    Connect on LinkedIn
                   </a>
+                  <a href="#contact" class="btn btn-outline btn-sm">Direct Message</a>
                 </div>
+              </div>
+
+              <div class="li-identity">
+                <h3 id="liEmbedName">Kiruthick Raajaa J S</h3>
+                <p class="li-embed-headline" id="liEmbedHeadline">
+                  Programmer Analyst · MS SQL | Query Optimization | Interactive Dashboards | Python &amp; React.js
+                </p>
+                <p class="li-embed-loc mono" id="liEmbedLocation">Coimbatore, Tamil Nadu, India</p>
+              </div>
+
+              <div class="li-summary-cards">
+                <div class="li-mini-card">
+                  <span class="mono li-mini-label">EXPERIENCE</span>
+                  <p>Programmer Analyst (Jul 2025 – Present) &amp; Trainee (Feb – Jun 2025)</p>
+                </div>
+                <div class="li-mini-card">
+                  <span class="mono li-mini-label">CORE DELIVERABLES</span>
+                  <p>15+ Clinical &amp; Procurement Workflows · Custom SQL Compliance Dashboards</p>
+                </div>
+                <div class="li-mini-card">
+                  <span class="mono li-mini-label">RECOGNITION</span>
+                  <p>HackerRank SQL (Advanced) · SIH Top 100 Finalist · Published Author</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode B: Official LinkedIn JS SDK Badge -->
+          <div class="li-window-content" id="liOfficialBadgePanel" hidden>
+            <div class="li-sdk-container">
+              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="kiruthickraajaajs" data-version="v1">
+                <a class="badge-base__link LI-simple-link btn btn-emerald" href="https://in.linkedin.com/in/kiruthickraajaajs?trk=profile-badge" target="_blank" rel="noopener noreferrer">
+                  Open Official LinkedIn Profile — Kiruthick Raajaa J S
+                </a>
               </div>
             </div>
           </div>
@@ -1720,91 +567,79 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS, ACHIEVEMENTS & EDUCATION -->
-    <section id="credentials">
+    <!-- 06. CERTIFICATIONS, ACHIEVEMENTS & EDUCATION -->
+    <section id="credentials" class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">06 / Credentials & Honors</span>
-          <h2 class="section-title">Certifications, Awards & Education</h2>
+        <div class="section-top reveal">
+          <span class="section-index mono">06 // VERIFIED CREDENTIALS</span>
+          <h2 class="section-heading">Certifications, Honours &amp; Academic Foundation</h2>
         </div>
 
-        <div class="bento-grid">
-          <!-- Column 1: Certifications -->
-          <div class="reveal">
-            <h3 style="font-size: 1.2rem; margin-bottom: 1.15rem; color: var(--accent-cyan);">
-              Verified Certifications
-            </h3>
-            <div class="cred-list">
-              <div class="cred-item">
-                <div class="cred-badge-icon">SQL</div>
+        <div class="credentials-split-grid">
+          <div class="cred-column reveal">
+            <h3 class="sub-column-title mono">LICENSES &amp; CERTIFICATIONS</h3>
+            <div class="cert-cards-stack" id="certificationsList">
+              <div class="cred-card">
                 <div>
-                  <p class="cred-title">SQL (Advanced) Skills Certification</p>
-                  <p class="cred-sub">HackerRank · Complex Queries, Window Functions & Optimization</p>
+                  <h4>SQL (Advanced) Skills Certification</h4>
+                  <p class="cred-issuer">HackerRank</p>
                 </div>
+                <span class="cred-code">SQL-ADV</span>
               </div>
-
-              <div class="cred-item">
-                <div class="cred-badge-icon">PY</div>
+              <div class="cred-card">
                 <div>
-                  <p class="cred-title">Python 3.4.3 Training Completion</p>
-                  <p class="cred-sub">IIT Bombay — Spoken Tutorial Project</p>
+                  <h4>Python 3.4.3 Training Completion</h4>
+                  <p class="cred-issuer">IIT Bombay — Spoken Tutorial</p>
                 </div>
+                <span class="cred-code">IITB-PY</span>
               </div>
-
-              <div class="cred-item">
-                <div class="cred-badge-icon">INF</div>
+              <div class="cred-card">
                 <div>
-                  <p class="cred-title">Programming in Python 3</p>
-                  <p class="cred-sub">Infosys Springboard</p>
+                  <h4>Python 3 Programming</h4>
+                  <p class="cred-issuer">Infosys Springboard</p>
                 </div>
+                <span class="cred-code">INF-PY3</span>
               </div>
-
-              <div class="cred-item">
-                <div class="cred-badge-icon">FS</div>
+              <div class="cred-card">
                 <div>
-                  <p class="cred-title">Full Stack Python Development</p>
-                  <p class="cred-sub">Login 360</p>
+                  <h4>Full Stack Python Development</h4>
+                  <p class="cred-issuer">Login 360</p>
                 </div>
+                <span class="cred-code">FS-PY</span>
+              </div>
+            </div>
+
+            <h3 class="sub-column-title mono" style="margin-top: 2.25rem;">ACADEMIC BACKGROUND</h3>
+            <div id="educationCard">
+              <div class="cred-card edu-highlight-card">
+                <div class="edu-top-row">
+                  <span class="cred-code">2020 – 2024</span>
+                  <span class="mono edu-cgpa">CGPA: 7.7 / 10.0</span>
+                </div>
+                <h4 style="font-size:1.08rem; margin-top:0.4rem;">Bachelor of Technology (B.Tech) in Information Technology</h4>
+                <p class="edu-inst">St. Joseph College of Engineering</p>
+                <p class="edu-desc">Focused on Relational Database Management Systems, Data Structures, Python Programming, and Software Engineering.</p>
               </div>
             </div>
           </div>
 
-          <!-- Column 2: Achievements & Education -->
-          <div class="reveal">
-            <h3 style="font-size: 1.2rem; margin-bottom: 1.15rem; color: var(--accent-indigo);">
-              Hackathons, Research & Education
-            </h3>
-            <div class="cred-list">
-              <div class="cred-item">
-                <div class="cred-badge-icon" style="color: var(--accent-amber); background: rgba(245,158,11,0.12);">🏆</div>
-                <div>
-                  <p class="cred-title">Smart India Hackathon (SIH) — Top 100 Finalist</p>
-                  <p class="cred-sub">Selected among the top 100 teams nationwide in India's flagship national hackathon.</p>
-                </div>
+          <div class="cred-column reveal">
+            <h3 class="sub-column-title mono">AWARDS &amp; PUBLICATIONS</h3>
+            <div class="achievements-stack" id="achievementsList">
+              <div class="cred-card award-card">
+                <span class="cred-code">National Finalist</span>
+                <h4>Smart India Hackathon (SIH) — Top 100 Finalist</h4>
+                <p>Selected among the top 100 teams nationwide in India's largest national student innovation hackathon.</p>
               </div>
-
-              <div class="cred-item">
-                <div class="cred-badge-icon" style="color: var(--accent-emerald); background: rgba(16,185,129,0.12);">🥇</div>
-                <div>
-                  <p class="cred-title">Inter-College Hackathon — Top 10 Finalist</p>
-                  <p class="cred-sub">Led technical execution to place in the top 10 across competing engineering colleges.</p>
-                </div>
+              <div class="cred-card award-card">
+                <span class="cred-code">Top 10 Rank</span>
+                <h4>Inter-College Hackathon — Top 10 Finalist</h4>
+                <p>Led technical development and problem-solving to rank in the top 10 across competing engineering institutions.</p>
               </div>
-
-              <div class="cred-item">
-                <div class="cred-badge-icon">📄</div>
-                <div>
-                  <p class="cred-title">Published Research Author — Dyslexia Detection</p>
-                  <p class="cred-sub">Co-authored and published a research paper on early identification of dyslexia.</p>
-                </div>
-              </div>
-
-              <div class="cred-item" style="border-color: rgba(56,189,248,0.35);">
-                <div class="cred-badge-icon" style="color: var(--accent-cyan); background: rgba(56,189,248,0.12);">🎓</div>
-                <div>
-                  <p class="cred-title">B.Tech in Information Technology</p>
-                  <p class="cred-sub">St. Joseph College of Engineering · 2020 – 2024 · <strong>CGPA: 7.7</strong></p>
-                </div>
+              <div class="cred-card award-card">
+                <span class="cred-code">Published Author</span>
+                <h4>Research Publication — Dyslexia Identification</h4>
+                <p>Co-authored and published a peer-reviewed journal paper focused on early dyslexia detection technology.</p>
               </div>
             </div>
           </div>
@@ -1812,82 +647,61 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" style="background: var(--bg-secondary);">
+    <!-- 07. CONTACT SECTION -->
+    <section id="contact" class="section section-alt">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">07 / Get In Touch</span>
-          <h2 class="section-title">Let's Discuss Your Data & Engineering Needs</h2>
-          <p class="section-subtitle">
-            Available for Programmer Analyst, SQL Developer, Data Analyst, and BI Engineer roles.
-          </p>
+        <div class="section-top reveal">
+          <span class="section-index mono">07 // INITIATE DIALOGUE</span>
+          <h2 class="section-heading">Let's Build High-Impact Data Solutions</h2>
         </div>
 
-        <div class="contact-grid">
-          <div class="reveal">
-            <p style="color: var(--text-secondary); font-size: 0.96rem;">
-              Whether you're hiring for an enterprise SQL / analytics role or looking to collaborate on dashboard and application engineering, feel free to reach out directly.
+        <div class="contact-architectural-grid">
+          <div class="contact-direct-col reveal">
+            <p class="contact-lead">
+              Whether you are recruiting for a <strong>Programmer Analyst, SQL Developer, Data Analyst, or BI Engineer</strong> role, you can reach me directly via email, phone, or LinkedIn.
             </p>
-
-            <div class="contact-methods">
-              <div class="contact-card">
-                <div class="contact-card-info">
-                  <div class="pillar-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </div>
-                  <div>
-                    <div style="font-size: 0.76rem; color: var(--text-muted);">Email Address</div>
-                    <a href="mailto:kiruthickraajaa@gmail.com" style="color: var(--text-primary); font-weight: 600; text-decoration: none; font-size: 0.92rem;">kiruthickraajaa@gmail.com</a>
-                  </div>
+            <div class="contact-cards-list" id="contactCardsList">
+              <div class="contact-row-card">
+                <div>
+                  <span class="mono contact-lbl">EMAIL ADDRESS</span>
+                  <p class="contact-val"><a href="mailto:kiruthickraajaa@gmail.com">kiruthickraajaa@gmail.com</a></p>
                 </div>
-                <button class="copy-btn" data-copy="kiruthickraajaa@gmail.com" type="button">Copy</button>
+                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="kiruthickraajaa@gmail.com">Copy</button>
               </div>
-
-              <div class="contact-card">
-                <div class="contact-card-info">
-                  <div class="pillar-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </div>
-                  <div>
-                    <div style="font-size: 0.76rem; color: var(--text-muted);">Phone</div>
-                    <a href="tel:+919486757132" style="color: var(--text-primary); font-weight: 600; text-decoration: none; font-size: 0.92rem;">+91 94867 57132</a>
-                  </div>
+              <div class="contact-row-card">
+                <div>
+                  <span class="mono contact-lbl">DIRECT PHONE</span>
+                  <p class="contact-val"><a href="tel:9486757132">+91 94867 57132</a></p>
                 </div>
-                <button class="copy-btn" data-copy="9486757132" type="button">Copy</button>
+                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="9486757132">Copy</button>
               </div>
-
-              <div class="contact-card">
-                <div class="contact-card-info">
-                  <div class="pillar-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  </div>
-                  <div>
-                    <div style="font-size: 0.76rem; color: var(--text-muted);">Location</div>
-                    <span style="color: var(--text-primary); font-weight: 600; font-size: 0.92rem;">Coimbatore, Tamil Nadu, India</span>
-                  </div>
+              <div class="contact-row-card">
+                <div>
+                  <span class="mono contact-lbl">LOCATION</span>
+                  <p class="contact-val">Coimbatore, Tamil Nadu, India</p>
                 </div>
+                <span class="cred-code">IST (UTC+5:30)</span>
               </div>
             </div>
           </div>
 
-          <!-- Quick Message Composer -->
-          <div class="glass-card reveal">
-            <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Send a Direct Message</h3>
-            <form class="contact-form" id="contactForm">
-              <div class="form-group">
-                <label for="senderName">Your Name / Organization</label>
-                <input type="text" id="senderName" class="form-control" placeholder="e.g., Hiring Team @ Acme Corp" required />
+          <div class="contact-form-col reveal">
+            <form class="editorial-form" id="contactForm">
+              <h3 class="form-title">Compose Direct Inquiry</h3>
+              <div class="field-group">
+                <label for="inputName" class="mono">YOUR NAME / TEAM</label>
+                <input type="text" id="inputName" required placeholder="e.g., Technical Recruiting Team" />
               </div>
-              <div class="form-group">
-                <label for="senderSubject">Subject</label>
-                <input type="text" id="senderSubject" class="form-control" placeholder="Opportunity: SQL / Programmer Analyst Role" required />
+              <div class="field-group">
+                <label for="inputSubject" class="mono">SUBJECT</label>
+                <input type="text" id="inputSubject" required placeholder="Interview Invitation — Programmer Analyst / SQL Role" />
               </div>
-              <div class="form-group">
-                <label for="senderMessage">Message</label>
-                <textarea id="senderMessage" rows="4" class="form-control" placeholder="Hi Kiruthick, we came across your portfolio and would love to connect..." required></textarea>
+              <div class="field-group">
+                <label for="inputMessage" class="mono">MESSAGE</label>
+                <textarea id="inputMessage" rows="4" required placeholder="Hello Kiruthick, we reviewed your portfolio and would like to schedule a conversation..."></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" style="justify-content: center;">
-                Compose Email
+              <button type="submit" class="btn btn-emerald" style="width: 100%; justify-content: center;">
+                Launch Email Client →
               </button>
             </form>
           </div>
@@ -1897,136 +711,28 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text-primary);">Kiruthick Raajaa J S</span>
-        <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 0.5rem;">· Programmer Analyst</span>
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div class="footer-brand">
+        <span class="brand-monogram">KR</span>
+        <div>
+          <p class="footer-name" id="footerName">Kiruthick Raajaa J S</p>
+          <p class="footer-role mono" id="footerRole">Programmer Analyst · SQL &amp; Data Visualization</p>
+        </div>
       </div>
-      <div style="display: flex; gap: 1.25rem; font-size: 0.85rem;">
-        <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a>
-        <a href="https://www.hackerrank.com/profile/kiruthickraajaa" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">HackerRank</a>
-        <a href="mailto:kiruthickraajaa@gmail.com" style="color: var(--text-muted); text-decoration: none;">Email</a>
+      <div class="footer-links" id="footerLinks">
+        <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.hackerrank.com/profile/kiruthickraajaa" target="_blank" rel="noopener noreferrer">HackerRank</a>
+        <a href="mailto:kiruthickraajaa@gmail.com">Email</a>
       </div>
-      <div style="color: var(--text-muted); font-size: 0.82rem;">
-        © 2026 Kiruthick Raajaa J S. All rights reserved.
-      </div>
+      <p class="footer-copy mono">© <span id="currentYear">2026</span> Kiruthick Raajaa J S</p>
     </div>
   </footer>
 
   <!-- Toast Notification -->
-  <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
+  <div class="toast-banner mono" id="toastBanner" role="status" aria-live="polite">Copied!</div>
 
-  <script>
-    // 1. Theme Switcher (Dark / Light Mode)
-    const themeToggle = document.getElementById('themeToggle');
-    const htmlEl = document.documentElement;
-    const savedTheme = localStorage.getItem('kr_portfolio_theme') || 'dark';
-    htmlEl.setAttribute('data-theme', savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const current = htmlEl.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', next);
-      localStorage.setItem('kr_portfolio_theme', next);
-    });
-
-    // 2. Mobile Navigation Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // 3. Interactive Skill Domain Filter
-    const filterButtons = document.querySelectorAll('.skill-tab-btn');
-    const skillCards = document.querySelectorAll('.skill-category-card');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-        skillCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // 4. LinkedIn Showcase View Switcher (Interactive View vs Official Badge SDK)
-    const btnInteractiveView = document.getElementById('btnInteractiveView');
-    const btnBadgeView = document.getElementById('btnBadgeView');
-    const liInteractiveView = document.getElementById('li-interactive-view');
-    const liBadgeView = document.getElementById('li-badge-view');
-
-    btnInteractiveView.addEventListener('click', () => {
-      btnInteractiveView.classList.add('active');
-      btnBadgeView.classList.remove('active');
-      liInteractiveView.style.display = 'block';
-      liBadgeView.style.display = 'none';
-    });
-
-    btnBadgeView.addEventListener('click', () => {
-      btnBadgeView.classList.add('active');
-      btnInteractiveView.classList.remove('active');
-      liBadgeView.style.display = 'block';
-      liInteractiveView.style.display = 'none';
-    });
-
-    // 5. Copy to Clipboard with Toast Feedback
-    const toast = document.getElementById('toast');
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const value = btn.getAttribute('data-copy');
-        navigator.clipboard.writeText(value).then(() => {
-          toast.textContent = `Copied "${value}" to clipboard!`;
-          toast.classList.add('show');
-          setTimeout(() => toast.classList.remove('show'), 2600);
-        });
-      });
-    });
-
-    // 6. Mailto Contact Composer
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('senderName').value.trim();
-      const subject = encodeURIComponent(document.getElementById('senderSubject').value.trim());
-      const body = encodeURIComponent(`From: ${name}\n\n${document.getElementById('senderMessage').value.trim()}`);
-      window.location.href = `mailto:kiruthickraajaa@gmail.com?subject=${subject}&body=${body}`;
-    });
-
-    // 7. Scroll Reveal & Active Nav Link Highlighting
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => revealObserver.observe(el));
-
-    const sections = document.querySelectorAll('main section[id]');
-    const navItems = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(sec => {
-        const top = window.scrollY;
-        if (top >= sec.offsetTop - 130) {
-          current = sec.getAttribute('id');
-        }
-      });
-      navItems.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-      });
-    });
-  </script>
+  <!-- External JavaScript (Root Level) -->
+  <script src="script.js"></script>
 </body>
 </html>

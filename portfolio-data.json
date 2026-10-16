@@ -1,0 +1,242 @@
+{
+  "profile": {
+    "name": "Kiruthick Raajaa J S",
+    "monogram": "KR",
+    "role": "Programmer Analyst",
+    "tagline": "SQL Architecture · Business Intelligence · Full-Stack Workflows",
+    "statusText": "Available for Data, SQL & Software Engineering Roles",
+    "location": "Coimbatore, Tamil Nadu, India",
+    "profileImage": "assets/images/profile.jpg",
+    "profileImageAlt": "Portrait of Kiruthick Raajaa J S — Programmer Analyst",
+    "heroIntro": "Designing high-performance MS SQL solutions, optimizing query execution plans, and building interactive compliance & operational dashboards that transform complex business rules into audit-ready systems.",
+    "aboutParagraphs": [
+      "I am a Programmer Analyst based in Coimbatore, Tamil Nadu, specializing in relational database engineering, custom report automation, and interactive dashboard development across enterprise software modules.",
+      "My work bridges raw operational data and executive decision-making—translating requirements from product, compliance, and quality assurance stakeholders into optimized T-SQL queries, reusable report templates, and low-code/web interfaces that reduce manual effort.",
+      "Beyond SQL and analytics, I develop full-stack workflows using Python, JavaScript, and React.js, backed by national recognition as a Smart India Hackathon Top 100 Finalist and published academic researcher."
+    ],
+    "pillars": [
+      {
+        "number": "01",
+        "title": "SQL Engineering & Query Tuning",
+        "description": "Writing complex T-SQL stored procedures, CTEs, and aggregations while inspecting query execution plans to eliminate performance bottlenecks."
+      },
+      {
+        "number": "02",
+        "title": "Interactive BI & Audit Reporting",
+        "description": "Architecting real-time operational dashboards and automated custom report templates that improve team efficiency and audit readiness."
+      },
+      {
+        "number": "03",
+        "title": "Application & Workflow Automation",
+        "description": "Building responsive front-end components and automated enterprise workflows using Python, React.js, JavaScript, and low-code platforms."
+      }
+    ],
+    "stats": [
+      { "value": "1+", "label": "Years Enterprise Experience" },
+      { "value": "15+", "label": "Production Workflows Built" },
+      { "value": "Top 100", "label": "Smart India Hackathon" },
+      { "value": "7.7", "label": "B.Tech IT CGPA" }
+    ],
+    "sqlSample": {
+      "filename": "compliance_audit_pipeline.sql",
+      "code": "-- Optimizing Enterprise Module Reporting & Audit Readiness\nWITH WorkflowMetrics AS (\n  SELECT \n    module_code,\n    COUNT(workflow_id) AS total_executions,\n    AVG(duration_ms)   AS avg_query_time_ms,\n    SUM(CASE WHEN audit_status = 'VERIFIED' THEN 1 ELSE 0 END) AS compliant_runs\n  FROM dbo.OperationalWorkflows WITH (NOLOCK)\n  WHERE execution_date >= DATEADD(MONTH, -6, GETDATE())\n  GROUP BY module_code\n)\nSELECT \n  module_code,\n  total_executions,\n  avg_query_time_ms,\n  CAST((compliant_runs * 100.0 / NULLIF(total_executions, 0)) AS DECIMAL(5,2)) AS compliance_rate_pct\nFROM WorkflowMetrics\nORDER BY compliance_rate_pct DESC;",
+      "executionNote": "Execution Plan: Index Seek · 12 ms · 0 Bottlenecks"
+    }
+  },
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/in/kiruthickraajaajs/",
+    "linkedinHandle": "kiruthickraajaajs",
+    "hackerrank": "https://www.hackerrank.com/profile/kiruthickraajaa",
+    "email": "kiruthickraajaa@gmail.com",
+    "phone": "9486757132",
+    "phoneFormatted": "+91 94867 57132"
+  },
+  "skills": [
+    {
+      "id": "database",
+      "category": "Database & SQL Engineering",
+      "badge": "Primary Core",
+      "items": [
+        { "name": "MS SQL Server (T-SQL)", "featured": true },
+        { "name": "Query Optimization", "featured": true },
+        { "name": "Execution Plan Analysis", "featured": true },
+        { "name": "MySQL", "featured": false },
+        { "name": "Stored Procedures & CTEs", "featured": true },
+        { "name": "Complex Aggregations", "featured": false },
+        { "name": "Dynamic SQL & JSON Parsing", "featured": false },
+        { "name": "Relational Data Modeling", "featured": false }
+      ]
+    },
+    {
+      "id": "analytics",
+      "category": "BI, Dashboards & Reporting",
+      "badge": "Analytics",
+      "items": [
+        { "name": "Dashboard Development", "featured": true },
+        { "name": "Data Visualization", "featured": true },
+        { "name": "Custom Report Generation", "featured": true },
+        { "name": "Compliance & Audit Metrics", "featured": false },
+        { "name": "Data Interpretation", "featured": false },
+        { "name": "Root-Cause Data Debugging", "featured": true }
+      ]
+    },
+    {
+      "id": "development",
+      "category": "Application & Web Stack",
+      "badge": "Development",
+      "items": [
+        { "name": "Python 3", "featured": true },
+        { "name": "React.js", "featured": true },
+        { "name": "JavaScript (ES6+)", "featured": true },
+        { "name": "HTML5 & Modern CSS3", "featured": false },
+        { "name": "Low-Code Workflow Platforms", "featured": false },
+        { "name": "RESTful Data Integration", "featured": false }
+      ]
+    },
+    {
+      "id": "practices",
+      "category": "Delivery & Engineering Process",
+      "badge": "Methodology",
+      "items": [
+        { "name": "Requirement Gathering", "featured": true },
+        { "name": "Cross-Team Coordination", "featured": true },
+        { "name": "SDLC Best Practices", "featured": false },
+        { "name": "Technical Documentation", "featured": false },
+        { "name": "Analytical Thinking", "featured": false },
+        { "name": "Git & GitHub", "featured": false }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "index": "01",
+      "role": "Programmer Analyst",
+      "organization": "Enterprise Software & BI Solutions",
+      "location": "Coimbatore, Tamil Nadu",
+      "period": "Jul 2025 – Present",
+      "current": true,
+      "summary": "Leading SQL query architecture, custom report automation, and interactive dashboard engineering across enterprise business modules.",
+      "highlights": [
+        "Designed and maintained high-performance MS SQL queries and interactive dashboards to support reporting activities across core business modules.",
+        "Assisted in deep-dive data analysis and engineered reusable custom report templates, significantly reducing manual reporting efforts and improving audit readiness.",
+        "Troubleshot complex production data and reporting issues by analyzing SQL query execution plans and isolating performance bottlenecks.",
+        "Coordinated directly with product, compliance, and quality teams to gather requirements, ensure accurate report documentation, and keep records up to date.",
+        "Leveraged MS SQL and advanced aggregations to transform raw business requirements into scalable data solutions and executive dashboards."
+      ],
+      "technologies": ["MS SQL", "Query Optimization", "Execution Plans", "Dashboard Development", "Report Automation"]
+    },
+    {
+      "index": "02",
+      "role": "Programmer Analyst Trainee",
+      "organization": "Enterprise Software & BI Solutions",
+      "location": "Coimbatore, Tamil Nadu",
+      "period": "Feb 2025 – Jun 2025",
+      "current": false,
+      "summary": "Focused on enterprise low-code module development, relational query authoring, and structured BI reporting workflows.",
+      "highlights": [
+        "Completed intensive hands-on training in enterprise low-code application platforms and core business product modules.",
+        "Assisted in developing relational SQL queries, operational reports, and interactive dashboards under senior engineering guidance.",
+        "Gained practical exposure to stakeholder requirement analysis, structured reporting, and data visualization techniques.",
+        "Applied industry best practices in technical documentation, coding standards, and the software development lifecycle (SDLC)."
+      ],
+      "technologies": ["SQL", "Data Visualization", "Low-Code Modules", "Requirement Analysis", "SDLC"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "hais-infection-control",
+      "number": "01",
+      "title": "HAIS — Healthcare Infection Control & Compliance System",
+      "category": "Healthcare SQL & BI Dashboards",
+      "period": "Enterprise Module",
+      "summary": "Architected SQL-driven clinical surveillance workflows and audit-ready compliance dashboards for tracking and preventing hospital-acquired infections.",
+      "challenge": "Clinical pharmacy, nursing, and quality teams needed unified tracking and automated compliance reporting across diverse infection surveillance workflows without manual spreadsheet reconciliation.",
+      "outcomes": [
+        "Developed 15+ end-to-end clinical pharmacy, nursing, and infection control utilization workflows.",
+        "Engineered optimized MS SQL aggregation queries powering real-time compliance and audit-readiness dashboards.",
+        "Created standardized custom report templates that streamlined regulatory documentation and reduced manual reporting overhead."
+      ],
+      "technologies": ["MS SQL", "Dashboard Development", "Compliance Reporting", "Workflow Automation"]
+    },
+    {
+      "id": "vendor-portal-module",
+      "number": "02",
+      "title": "Enterprise Vendor Portal & RFQ Routing System",
+      "category": "Procurement Workflow & Database Logic",
+      "period": "Enterprise Module",
+      "summary": "Built structured digital procurement workflows managing vendor onboarding, purchase requests, and Request for Quotation (RFQ) lifecycle tracking.",
+      "challenge": "Procurement operations required transparent multi-stage routing for vendor registration, quote comparison, and purchase approvals backed by reliable relational data validation.",
+      "outcomes": [
+        "Implemented SQL-driven backend logic and stored procedures to manage vendor onboarding and multi-level RFQ approval states.",
+        "Designed operational dashboards giving stakeholders real-time visibility into pending requisitions and vendor turnaround metrics.",
+        "Improved data consistency across procurement and finance teams through structured validation rules and automated reporting."
+      ],
+      "technologies": ["MS SQL", "Stored Procedures", "JavaScript", "Custom Reports", "Process Automation"]
+    },
+    {
+      "id": "dyslexia-identification",
+      "number": "03",
+      "title": "Early Identification of Dyslexia in Toddlers",
+      "category": "Published Research & Analytical Prototype",
+      "period": "B.Tech Capstone · 2024",
+      "summary": "Co-authored and published academic research developing an analytical screening methodology to detect early indicators of dyslexia in young learners.",
+      "challenge": "Early-stage dyslexia often goes undiagnosed in toddlers due to a lack of accessible, structured screening tools tailored for pre-readers.",
+      "outcomes": [
+        "Formulated data-driven assessment criteria and analytical workflows to evaluate early behavioral and cognitive markers.",
+        "Co-authored and published a peer-reviewed research paper detailing the detection methodology and findings.",
+        "Combined Python-based data analysis with an intuitive interface to assist educators and parents in early intervention."
+      ],
+      "technologies": ["Python", "Data Analysis", "Research Publication", "Assistive Technology"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "SQL (Advanced) Skills Certification",
+      "issuer": "HackerRank",
+      "code": "SQL-ADV",
+      "credentialUrl": "https://www.hackerrank.com/profile/kiruthickraajaa"
+    },
+    {
+      "name": "Python 3.4.3 Training Completion",
+      "issuer": "IIT Bombay — Spoken Tutorial",
+      "code": "IITB-PY",
+      "credentialUrl": ""
+    },
+    {
+      "name": "Python 3 Programming",
+      "issuer": "Infosys Springboard",
+      "code": "INF-PY3",
+      "credentialUrl": ""
+    },
+    {
+      "name": "Full Stack Python Development",
+      "issuer": "Login 360",
+      "code": "FS-PY",
+      "credentialUrl": ""
+    }
+  ],
+  "achievements": [
+    {
+      "tag": "National Finalist",
+      "title": "Smart India Hackathon (SIH) — Top 100 Finalist",
+      "description": "Selected among the top 100 teams nationwide in India's largest national student innovation hackathon."
+    },
+    {
+      "tag": "Top 10 Rank",
+      "title": "Inter-College Hackathon — Top 10 Finalist",
+      "description": "Led technical development and problem-solving to rank in the top 10 across competing engineering institutions."
+    },
+    {
+      "tag": "Published Author",
+      "title": "Research Publication — Dyslexia Identification",
+      "description": "Co-authored and published a peer-reviewed journal paper focused on early dyslexia detection technology."
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Technology (B.Tech) in Information Technology",
+    "institution": "St. Joseph College of Engineering",
+    "period": "2020 – 2024",
+    "score": "CGPA: 7.7 / 10.0",
+    "highlights": "Focused on Relational Database Management Systems, Data Structures, Python Programming, and Software Engineering."
+  }
+}
