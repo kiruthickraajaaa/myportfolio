@@ -34,7 +34,7 @@
   <header class="site-header">
     <div class="dock-nav-wrapper">
       <a href="#hero" class="brand-mark" aria-label="Home">
-        <span class="brand-monogram" id="navMonogram">KR</span>
+        <span class="brand-monogram" id="navMonogram"></span>
         <span class="brand-text" id="navName">Kiruthick Raajaa</span>
       </a>
 
@@ -78,21 +78,17 @@
           <div class="hero-copy reveal in-view">
             <div class="availability-tag">
               <span class="pulse-dot"></span>
-              <span id="heroStatus">Available for Data, SQL &amp; Software Engineering Roles</span>
+              <span id="heroStatus"></span>
             </div>
 
             <h1 class="hero-heading">
-              <span class="hero-name-main" id="heroName">Kiruthick Raajaa J S</span>
-              <span class="hero-role-serif" id="heroRole">Programmer Analyst</span>
+              <span class="hero-name-main" id="heroName"></span>
+              <span class="hero-role-serif" id="heroRole"></span>
             </h1>
 
-            <p class="hero-tagline mono" id="heroTagline">
-              SQL Architecture · Business Intelligence · Full-Stack Workflows
-            </p>
+            <p class="hero-tagline mono" id="heroTagline"></p>
 
-            <p class="hero-lead" id="heroIntro">
-              Designing high-performance MS SQL solutions, optimizing query execution plans, and building interactive compliance &amp; operational dashboards that transform complex business rules into audit-ready systems.
-            </p>
+            <p class="hero-lead" id="heroIntro"></p>
 
             <div class="hero-cta-group">
               <a href="#projects" class="btn btn-emerald">
@@ -114,48 +110,14 @@
             <!-- Collapsible Live SQL Architecture Drawer -->
             <div class="sql-drawer" id="sqlDrawer" hidden>
               <div class="sql-drawer-header">
-                <span class="mono" id="sqlFilename">compliance_audit_pipeline.sql</span>
-                <span class="sql-status-badge mono" id="sqlExecNote">Execution Plan: Index Seek · 12 ms</span>
+                <span class="mono" id="sqlFilename"></span>
+                <span class="sql-status-badge mono" id="sqlExecNote"></span>
               </div>
-              <pre class="sql-code-block"><code id="sqlCodeContent">-- Optimizing Enterprise Module Reporting &amp; Audit Readiness
-WITH WorkflowMetrics AS (
-  SELECT 
-    module_code,
-    COUNT(workflow_id) AS total_executions,
-    AVG(duration_ms)   AS avg_query_time_ms,
-    SUM(CASE WHEN audit_status = 'VERIFIED' THEN 1 ELSE 0 END) AS compliant_runs
-  FROM dbo.OperationalWorkflows WITH (NOLOCK)
-  WHERE execution_date >= DATEADD(MONTH, -6, GETDATE())
-  GROUP BY module_code
-)
-SELECT 
-  module_code,
-  total_executions,
-  avg_query_time_ms,
-  CAST((compliant_runs * 100.0 / NULLIF(total_executions, 0)) AS DECIMAL(5,2)) AS compliance_rate_pct
-FROM WorkflowMetrics
-ORDER BY compliance_rate_pct DESC;</code></pre>
+              <pre class="sql-code-block"><code id="sqlCodeContent"></code></pre>
             </div>
 
             <!-- Key Metrics Strip -->
-            <div class="hero-stats-bar" id="heroStatsBar">
-              <div class="stat-cell">
-                <div class="stat-cell-val">1+</div>
-                <div class="stat-cell-lbl mono">Years Enterprise Experience</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-val">15+</div>
-                <div class="stat-cell-lbl mono">Production Workflows Built</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-val">Top 100</div>
-                <div class="stat-cell-lbl mono">Smart India Hackathon</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-val">7.7</div>
-                <div class="stat-cell-lbl mono">B.Tech IT CGPA</div>
-              </div>
-            </div>
+            <div class="hero-stats-bar" id="heroStatsBar"></div>
           </div>
 
           <!-- Right Column: Architectural Portrait Showcase -->
@@ -178,7 +140,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
                 <!-- Graceful Editorial Fallback if image file cannot be found -->
                 <div class="portrait-fallback" id="portraitFallback" hidden>
                   <div class="fallback-avatar-ring">
-                    <span class="fallback-initials" id="fallbackInitials">KR</span>
+                    <span class="fallback-initials" id="fallbackInitials"></span>
                   </div>
                   <p class="fallback-title">Kiruthick Raajaa J S</p>
                   <p class="fallback-sub mono">Programmer Analyst · SQL &amp; BI</p>
@@ -222,35 +184,9 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
         </div>
 
         <div class="about-editorial-grid">
-          <div class="about-narrative reveal" id="aboutNarrative">
-            <p>I am a Programmer Analyst based in Coimbatore, Tamil Nadu, specializing in relational database engineering, custom report automation, and interactive dashboard development across enterprise software modules.</p>
-            <p>My work bridges raw operational data and executive decision-making—translating requirements from product, compliance, and quality assurance stakeholders into optimized T-SQL queries, reusable report templates, and low-code/web interfaces that reduce manual effort.</p>
-            <p>Beyond SQL and analytics, I develop full-stack workflows using Python, JavaScript, and React.js, backed by national recognition as a Smart India Hackathon Top 100 Finalist and published academic researcher.</p>
-          </div>
+          <div class="about-narrative reveal" id="aboutNarrative"></div>
 
-          <div class="about-pillars-grid reveal" id="aboutPillars">
-            <article class="pillar-item">
-              <span class="pillar-num">01</span>
-              <div>
-                <h3>SQL Engineering &amp; Query Tuning</h3>
-                <p>Writing complex T-SQL stored procedures, CTEs, and aggregations while inspecting query execution plans to eliminate performance bottlenecks.</p>
-              </div>
-            </article>
-            <article class="pillar-item">
-              <span class="pillar-num">02</span>
-              <div>
-                <h3>Interactive BI &amp; Audit Reporting</h3>
-                <p>Architecting real-time operational dashboards and automated custom report templates that improve team efficiency and audit readiness.</p>
-              </div>
-            </article>
-            <article class="pillar-item">
-              <span class="pillar-num">03</span>
-              <div>
-                <h3>Application &amp; Workflow Automation</h3>
-                <p>Building responsive front-end components and automated enterprise workflows using Python, React.js, JavaScript, and low-code platforms.</p>
-              </div>
-            </article>
-          </div>
+          <div class="about-pillars-grid reveal" id="aboutPillars"></div>
         </div>
       </div>
     </section>
@@ -272,69 +208,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
           </div>
         </div>
 
-        <div class="skills-bento-grid reveal" id="skillsGrid">
-          <article class="skill-domain-card" data-domain="database">
-            <div class="domain-header">
-              <h3 class="domain-title">Database &amp; SQL Engineering</h3>
-              <span class="domain-badge">Primary Core</span>
-            </div>
-            <div class="skill-pill-cluster">
-              <span class="skill-tag featured">MS SQL Server (T-SQL)</span>
-              <span class="skill-tag featured">Query Optimization</span>
-              <span class="skill-tag featured">Execution Plan Analysis</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag featured">Stored Procedures &amp; CTEs</span>
-              <span class="skill-tag">Complex Aggregations</span>
-              <span class="skill-tag">Dynamic SQL &amp; JSON Parsing</span>
-              <span class="skill-tag">Relational Data Modeling</span>
-            </div>
-          </article>
-
-          <article class="skill-domain-card" data-domain="analytics">
-            <div class="domain-header">
-              <h3 class="domain-title">BI, Dashboards &amp; Reporting</h3>
-              <span class="domain-badge">Analytics</span>
-            </div>
-            <div class="skill-pill-cluster">
-              <span class="skill-tag featured">Dashboard Development</span>
-              <span class="skill-tag featured">Data Visualization</span>
-              <span class="skill-tag featured">Custom Report Generation</span>
-              <span class="skill-tag">Compliance &amp; Audit Metrics</span>
-              <span class="skill-tag">Data Interpretation</span>
-              <span class="skill-tag featured">Root-Cause Data Debugging</span>
-            </div>
-          </article>
-
-          <article class="skill-domain-card" data-domain="development">
-            <div class="domain-header">
-              <h3 class="domain-title">Application &amp; Web Stack</h3>
-              <span class="domain-badge">Development</span>
-            </div>
-            <div class="skill-pill-cluster">
-              <span class="skill-tag featured">Python 3</span>
-              <span class="skill-tag featured">React.js</span>
-              <span class="skill-tag featured">JavaScript (ES6+)</span>
-              <span class="skill-tag">HTML5 &amp; Modern CSS3</span>
-              <span class="skill-tag">Low-Code Workflow Platforms</span>
-              <span class="skill-tag">RESTful Data Integration</span>
-            </div>
-          </article>
-
-          <article class="skill-domain-card" data-domain="practices">
-            <div class="domain-header">
-              <h3 class="domain-title">Delivery &amp; Engineering Process</h3>
-              <span class="domain-badge">Methodology</span>
-            </div>
-            <div class="skill-pill-cluster">
-              <span class="skill-tag featured">Requirement Gathering</span>
-              <span class="skill-tag featured">Cross-Team Coordination</span>
-              <span class="skill-tag">SDLC Best Practices</span>
-              <span class="skill-tag">Technical Documentation</span>
-              <span class="skill-tag">Analytical Thinking</span>
-              <span class="skill-tag">Git &amp; GitHub</span>
-            </div>
-          </article>
-        </div>
+        <div class="skills-bento-grid reveal" id="skillsGrid"></div>
       </div>
     </section>
 
@@ -346,60 +220,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
           <h2 class="section-heading">Professional Experience &amp; Progression</h2>
         </div>
 
-        <div class="experience-ledger" id="experienceLedger">
-          <article class="ledger-row reveal">
-            <div class="ledger-meta">
-              <div class="ledger-idx">01</div>
-              <span class="ledger-period mono">Jul 2025 – Present</span>
-              <p class="ledger-org">Enterprise Software &amp; BI Solutions</p>
-              <p class="ledger-org mono" style="font-size:0.75rem;">Coimbatore, Tamil Nadu</p>
-            </div>
-            <div class="ledger-content">
-              <h3 class="ledger-role-title">Programmer Analyst</h3>
-              <p class="ledger-summary">Leading SQL query architecture, custom report automation, and interactive dashboard engineering across enterprise business modules.</p>
-              <ul class="ledger-Points">
-                <li>Designed and maintained high-performance MS SQL queries and interactive dashboards to support reporting activities across core business modules.</li>
-                <li>Assisted in deep-dive data analysis and engineered reusable custom report templates, significantly reducing manual reporting efforts and improving audit readiness.</li>
-                <li>Troubleshot complex production data and reporting issues by analyzing SQL query execution plans and isolating performance bottlenecks.</li>
-                <li>Coordinated directly with product, compliance, and quality teams to gather requirements, ensure accurate report documentation, and keep records up to date.</li>
-                <li>Leveraged MS SQL and advanced aggregations to transform raw business requirements into scalable data solutions and executive dashboards.</li>
-              </ul>
-              <div class="tech-stack-strip">
-                <span class="tech-mini-pill">MS SQL</span>
-                <span class="tech-mini-pill">Query Optimization</span>
-                <span class="tech-mini-pill">Execution Plans</span>
-                <span class="tech-mini-pill">Dashboard Development</span>
-                <span class="tech-mini-pill">Report Automation</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="ledger-row reveal">
-            <div class="ledger-meta">
-              <div class="ledger-idx">02</div>
-              <span class="ledger-period mono">Feb 2025 – Jun 2025</span>
-              <p class="ledger-org">Enterprise Software &amp; BI Solutions</p>
-              <p class="ledger-org mono" style="font-size:0.75rem;">Coimbatore, Tamil Nadu</p>
-            </div>
-            <div class="ledger-content">
-              <h3 class="ledger-role-title">Programmer Analyst Trainee</h3>
-              <p class="ledger-summary">Focused on enterprise low-code module development, relational query authoring, and structured BI reporting workflows.</p>
-              <ul class="ledger-Points">
-                <li>Completed intensive hands-on training in enterprise low-code application platforms and core business product modules.</li>
-                <li>Assisted in developing relational SQL queries, operational reports, and interactive dashboards under senior engineering guidance.</li>
-                <li>Gained practical exposure to stakeholder requirement analysis, structured reporting, and data visualization techniques.</li>
-                <li>Applied industry best practices in technical documentation, coding standards, and the software development lifecycle (SDLC).</li>
-              </ul>
-              <div class="tech-stack-strip">
-                <span class="tech-mini-pill">SQL</span>
-                <span class="tech-mini-pill">Data Visualization</span>
-                <span class="tech-mini-pill">Low-Code Modules</span>
-                <span class="tech-mini-pill">Requirement Analysis</span>
-                <span class="tech-mini-pill">SDLC</span>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="experience-ledger" id="experienceLedger"></div>
       </div>
     </section>
 
@@ -411,76 +232,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
           <h2 class="section-heading">Enterprise Modules &amp; Research Case Studies</h2>
         </div>
 
-        <div class="projects-case-grid" id="projectsGrid">
-          <article class="case-card reveal">
-            <div>
-              <div class="case-top-bar">
-                <span class="case-number">01</span>
-                <span class="case-cat-tag">Healthcare SQL &amp; BI</span>
-              </div>
-              <h3 class="case-title">HAIS — Healthcare Infection Control &amp; Compliance System</h3>
-              <p class="case-summary">Architected SQL-driven clinical surveillance workflows and audit-ready compliance dashboards for tracking and preventing hospital-acquired infections.</p>
-              <div class="case-challenge-box"><strong>Challenge:</strong> Clinical pharmacy, nursing, and quality teams needed unified tracking and automated compliance reporting across diverse infection surveillance workflows.</div>
-              <ul class="case-outcomes">
-                <li>Developed 15+ end-to-end clinical pharmacy, nursing, and infection control utilization workflows.</li>
-                <li>Engineered optimized MS SQL aggregation queries powering real-time compliance dashboards.</li>
-                <li>Created standardized custom report templates that reduced manual reporting overhead.</li>
-              </ul>
-            </div>
-            <div class="tech-stack-strip">
-              <span class="tech-mini-pill">MS SQL</span>
-              <span class="tech-mini-pill">Dashboard Development</span>
-              <span class="tech-mini-pill">Compliance Reporting</span>
-              <span class="tech-mini-pill">Workflow Automation</span>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div>
-              <div class="case-top-bar">
-                <span class="case-number">02</span>
-                <span class="case-cat-tag">Procurement &amp; Database Logic</span>
-              </div>
-              <h3 class="case-title">Enterprise Vendor Portal &amp; RFQ Routing System</h3>
-              <p class="case-summary">Built structured digital procurement workflows managing vendor onboarding, purchase requests, and Request for Quotation (RFQ) lifecycle tracking.</p>
-              <div class="case-challenge-box"><strong>Challenge:</strong> Procurement operations required transparent multi-stage routing for vendor registration, quote comparison, and purchase approvals.</div>
-              <ul class="case-outcomes">
-                <li>Implemented SQL-driven backend logic and stored procedures to manage vendor onboarding and RFQ states.</li>
-                <li>Designed operational dashboards giving stakeholders real-time visibility into pending requisitions.</li>
-                <li>Improved data consistency across procurement and finance teams through structured validation rules.</li>
-              </ul>
-            </div>
-            <div class="tech-stack-strip">
-              <span class="tech-mini-pill">MS SQL</span>
-              <span class="tech-mini-pill">Stored Procedures</span>
-              <span class="tech-mini-pill">JavaScript</span>
-              <span class="tech-mini-pill">Custom Reports</span>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div>
-              <div class="case-top-bar">
-                <span class="case-number">03</span>
-                <span class="case-cat-tag">Published Research · 2024</span>
-              </div>
-              <h3 class="case-title">Early Identification of Dyslexia in Toddlers</h3>
-              <p class="case-summary">Co-authored and published academic research developing an analytical screening methodology to detect early indicators of dyslexia in young learners.</p>
-              <div class="case-challenge-box"><strong>Challenge:</strong> Early-stage dyslexia often goes undiagnosed in toddlers due to a lack of accessible, structured screening tools for pre-readers.</div>
-              <ul class="case-outcomes">
-                <li>Formulated data-driven assessment criteria and analytical workflows to evaluate early markers.</li>
-                <li>Co-authored and published a peer-reviewed research paper detailing the detection methodology.</li>
-                <li>Combined Python-based data analysis with an intuitive interface for educators and parents.</li>
-              </ul>
-            </div>
-            <div class="tech-stack-strip">
-              <span class="tech-mini-pill">Python</span>
-              <span class="tech-mini-pill">Data Analysis</span>
-              <span class="tech-mini-pill">Research Publication</span>
-              <span class="tech-mini-pill">Assistive Tech</span>
-            </div>
-          </article>
-        </div>
+        <div class="projects-case-grid" id="projectsGrid"></div>
       </div>
     </section>
 
@@ -503,7 +255,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
             <div class="window-controls">
               <span></span><span></span><span></span>
             </div>
-            <div class="window-address mono" id="liWindowUrl">linkedin.com/in/kiruthickraajaajs</div>
+            <div class="window-address mono" id="liWindowUrl"></div>
             <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer" class="mono window-ext-link">
               Open Direct ↗
             </a>
@@ -529,11 +281,11 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
               </div>
 
               <div class="li-identity">
-                <h3 id="liEmbedName">Kiruthick Raajaa J S</h3>
+                <h3 id="liEmbedName"></h3>
                 <p class="li-embed-headline" id="liEmbedHeadline">
                   Programmer Analyst · MS SQL | Query Optimization | Interactive Dashboards | Python &amp; React.js
                 </p>
-                <p class="li-embed-loc mono" id="liEmbedLocation">Coimbatore, Tamil Nadu, India</p>
+                <p class="li-embed-loc mono" id="liEmbedLocation"></p>
               </div>
 
               <div class="li-summary-cards">
@@ -578,70 +330,15 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
         <div class="credentials-split-grid">
           <div class="cred-column reveal">
             <h3 class="sub-column-title mono">LICENSES &amp; CERTIFICATIONS</h3>
-            <div class="cert-cards-stack" id="certificationsList">
-              <div class="cred-card">
-                <div>
-                  <h4>SQL (Advanced) Skills Certification</h4>
-                  <p class="cred-issuer">HackerRank</p>
-                </div>
-                <span class="cred-code">SQL-ADV</span>
-              </div>
-              <div class="cred-card">
-                <div>
-                  <h4>Python 3.4.3 Training Completion</h4>
-                  <p class="cred-issuer">IIT Bombay — Spoken Tutorial</p>
-                </div>
-                <span class="cred-code">IITB-PY</span>
-              </div>
-              <div class="cred-card">
-                <div>
-                  <h4>Python 3 Programming</h4>
-                  <p class="cred-issuer">Infosys Springboard</p>
-                </div>
-                <span class="cred-code">INF-PY3</span>
-              </div>
-              <div class="cred-card">
-                <div>
-                  <h4>Full Stack Python Development</h4>
-                  <p class="cred-issuer">Login 360</p>
-                </div>
-                <span class="cred-code">FS-PY</span>
-              </div>
-            </div>
+            <div class="cert-cards-stack" id="certificationsList"></div>
 
             <h3 class="sub-column-title mono" style="margin-top: 2.25rem;">ACADEMIC BACKGROUND</h3>
-            <div id="educationCard">
-              <div class="cred-card edu-highlight-card">
-                <div class="edu-top-row">
-                  <span class="cred-code">2020 – 2024</span>
-                  <span class="mono edu-cgpa">CGPA: 7.7 / 10.0</span>
-                </div>
-                <h4 style="font-size:1.08rem; margin-top:0.4rem;">Bachelor of Technology (B.Tech) in Information Technology</h4>
-                <p class="edu-inst">St. Joseph College of Engineering</p>
-                <p class="edu-desc">Focused on Relational Database Management Systems, Data Structures, Python Programming, and Software Engineering.</p>
-              </div>
-            </div>
+            <div id="educationCard"></div>
           </div>
 
           <div class="cred-column reveal">
             <h3 class="sub-column-title mono">AWARDS &amp; PUBLICATIONS</h3>
-            <div class="achievements-stack" id="achievementsList">
-              <div class="cred-card award-card">
-                <span class="cred-code">National Finalist</span>
-                <h4>Smart India Hackathon (SIH) — Top 100 Finalist</h4>
-                <p>Selected among the top 100 teams nationwide in India's largest national student innovation hackathon.</p>
-              </div>
-              <div class="cred-card award-card">
-                <span class="cred-code">Top 10 Rank</span>
-                <h4>Inter-College Hackathon — Top 10 Finalist</h4>
-                <p>Led technical development and problem-solving to rank in the top 10 across competing engineering institutions.</p>
-              </div>
-              <div class="cred-card award-card">
-                <span class="cred-code">Published Author</span>
-                <h4>Research Publication — Dyslexia Identification</h4>
-                <p>Co-authored and published a peer-reviewed journal paper focused on early dyslexia detection technology.</p>
-              </div>
-            </div>
+            <div class="achievements-stack" id="achievementsList"></div>
           </div>
         </div>
       </div>
@@ -660,29 +357,7 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
             <p class="contact-lead">
               Whether you are recruiting for a <strong>Programmer Analyst, SQL Developer, Data Analyst, or BI Engineer</strong> role, you can reach me directly via email, phone, or LinkedIn.
             </p>
-            <div class="contact-cards-list" id="contactCardsList">
-              <div class="contact-row-card">
-                <div>
-                  <span class="mono contact-lbl">EMAIL ADDRESS</span>
-                  <p class="contact-val"><a href="mailto:kiruthickraajaa@gmail.com">kiruthickraajaa@gmail.com</a></p>
-                </div>
-                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="kiruthickraajaa@gmail.com">Copy</button>
-              </div>
-              <div class="contact-row-card">
-                <div>
-                  <span class="mono contact-lbl">DIRECT PHONE</span>
-                  <p class="contact-val"><a href="tel:9486757132">+91 94867 57132</a></p>
-                </div>
-                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="9486757132">Copy</button>
-              </div>
-              <div class="contact-row-card">
-                <div>
-                  <span class="mono contact-lbl">LOCATION</span>
-                  <p class="contact-val">Coimbatore, Tamil Nadu, India</p>
-                </div>
-                <span class="cred-code">IST (UTC+5:30)</span>
-              </div>
-            </div>
+            <div class="contact-cards-list" id="contactCardsList"></div>
           </div>
 
           <div class="contact-form-col reveal">
@@ -716,15 +391,11 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
       <div class="footer-brand">
         <span class="brand-monogram">KR</span>
         <div>
-          <p class="footer-name" id="footerName">Kiruthick Raajaa J S</p>
+          <p class="footer-name" id="footerName"></p>
           <p class="footer-role mono" id="footerRole">Programmer Analyst · SQL &amp; Data Visualization</p>
         </div>
       </div>
-      <div class="footer-links" id="footerLinks">
-        <a href="https://www.linkedin.com/in/kiruthickraajaajs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.hackerrank.com/profile/kiruthickraajaa" target="_blank" rel="noopener noreferrer">HackerRank</a>
-        <a href="mailto:kiruthickraajaa@gmail.com">Email</a>
-      </div>
+      <div class="footer-links" id="footerLinks"></div>
       <p class="footer-copy mono">© <span id="currentYear">2026</span> Kiruthick Raajaa J S</p>
     </div>
   </footer>
@@ -733,6 +404,6 @@ ORDER BY compliance_rate_pct DESC;</code></pre>
   <div class="toast-banner mono" id="toastBanner" role="status" aria-live="polite">Copied!</div>
 
   <!-- External JavaScript (Root Level) -->
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

@@ -159,20 +159,26 @@
       "technologies": ["MS SQL", "Dashboard Development", "Compliance Reporting", "Workflow Automation"]
     },
     {
-      "id": "vendor-portal-module",
-      "number": "02",
-      "title": "Enterprise Vendor Portal & RFQ Routing System",
-      "category": "Procurement Workflow & Database Logic",
-      "period": "Enterprise Module",
-      "summary": "Built structured digital procurement workflows managing vendor onboarding, purchase requests, and Request for Quotation (RFQ) lifecycle tracking.",
-      "challenge": "Procurement operations required transparent multi-stage routing for vendor registration, quote comparison, and purchase approvals backed by reliable relational data validation.",
-      "outcomes": [
-        "Implemented SQL-driven backend logic and stored procedures to manage vendor onboarding and multi-level RFQ approval states.",
-        "Designed operational dashboards giving stakeholders real-time visibility into pending requisitions and vendor turnaround metrics.",
-        "Improved data consistency across procurement and finance teams through structured validation rules and automated reporting."
-      ],
-      "technologies": ["MS SQL", "Stored Procedures", "JavaScript", "Custom Reports", "Process Automation"]
-    },
+  "id": "saas-subscription-retention-analysis",
+  "number": "02",
+  "title": "SaaS Subscription & Retention Analytics",
+  "category": "SQL Data Modeling & Revenue Analytics",
+  "period": "Independent Analytics Project · 2026",
+  "summary": "Architected an end-to-end relational SQL analytics pipeline across 33,100+ multi-table records to track Monthly Recurring Revenue (MRR) waterfalls, cohort retention, and product-driven churn.",
+  "challenge": "Multi-subscription SaaS accounts with overlapping billing cycles, unflagged trial periods, and out-of-window feature logs obscure true Net Dollar Retention (NRR) and root-cause churn signals.",
+  "outcomes": [
+    "Engineered standardized SQL views and calendar date spines using CTEs and window functions (LAG, ROW_NUMBER) to classify $11.34M in cumulative paid MRR across New, Expansion, Contraction, and Churned movements.",
+    "Built time-based cohort retention matrices tracking both Logo Retention and Net Dollar Retention (NRR) across 500 accounts and 5,000 subscription lifecycles.",
+    "Diagnosed churn drivers by joining 25,000 feature usage logs, 2,000 support tickets, and 600 churn events—identifying feature gaps (19.0%) and support friction (17.3%) as primary revenue leakages."
+  ],
+  "technologies": [
+    "SQL (PostgreSQL / T-SQL)",
+    "CTEs & Window Functions",
+    "Cohort & Retention Modeling",
+    "Relational Data Cleaning",
+    "SaaS Metrics (MRR / NRR / LTV)"
+  ]
+},
     {
       "id": "dyslexia-identification",
       "number": "03",
